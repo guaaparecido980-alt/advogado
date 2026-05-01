@@ -433,26 +433,109 @@ section{position:relative}
   .dif-item,.dif-item:nth-child(n){grid-column:1/-1;min-height:auto;padding:28px 24px}
 }
 
-/* INSIGHTS */
-.insights{background:var(--bg);border-top:1px solid var(--line)}
-.insights-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:64px}
-.insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.insight{background:var(--bg);padding:36px 32px;display:flex;flex-direction:column;min-height:320px;text-decoration:none;color:inherit;transition:background .45s ease}
-.insight:hover{background:var(--bg-2)}
-.insight-meta{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--bone-mute);margin-bottom:28px}
-.insight-meta .cat{color:var(--bronze)}
-.insight-title{font-family:var(--serif);font-size:24px;font-weight:400;line-height:1.22;color:var(--bone);letter-spacing:-.01em;margin-top:auto;margin-bottom:18px;transition:color .35s}
-.insight:hover .insight-title{color:var(--bronze-soft)}
-.insight-title .ital{font-style:italic;color:var(--bronze-soft)}
-.insight-arrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--bone-mute);display:flex;align-items:center;gap:10px;transition:gap .3s,color .3s}
-.insight:hover .insight-arrow{gap:18px;color:var(--bronze)}
-.insights-foot{margin-top:40px;display:flex;justify-content:center}
-.insights-foot a{font-family:var(--mono);font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--bone-mute);text-decoration:none;padding:14px 32px;border:1px solid var(--line-strong);border-radius:var(--r-pill);display:inline-flex;align-items:center;gap:14px;transition:all .35s var(--ease)}
-.insights-foot a:hover{background:var(--bone);color:var(--bg);border-color:var(--bone)}
+/* ========== TRIBUNA — central editorial premium ========== */
+.tribuna{background:var(--bg);border-top:1px solid var(--line);position:relative;overflow:hidden}
+.tribuna::before{content:'';position:absolute;top:0;left:50%;width:1px;height:60%;background:linear-gradient(to bottom,var(--bronze) 0%,transparent 100%);opacity:.15;pointer-events:none}
+
+.tribuna-header{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:end;margin-bottom:64px}
+.tribuna-filters{display:flex;gap:8px;margin-top:28px;flex-wrap:wrap}
+.tribuna-filter{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:9px 16px;border:1px solid var(--line);background:transparent;color:var(--bone-mute);cursor:pointer;border-radius:var(--r-pill);transition:all .35s var(--ease);font-weight:400}
+.tribuna-filter:hover{color:var(--bone);border-color:var(--line-strong)}
+.tribuna-filter.active{background:var(--bronze);border-color:var(--bronze);color:var(--bg)}
+
+/* DESTAQUE PRINCIPAL */
+.tribuna-feature{display:grid;grid-template-columns:1.2fr 1fr;gap:0;background:var(--bg-2);border:1px solid var(--line);text-decoration:none;color:inherit;margin-bottom:32px;position:relative;overflow:hidden;transition:border-color .5s ease}
+.tribuna-feature::before{content:'';position:absolute;top:0;left:0;width:0;height:1px;background:var(--bronze);transition:width .8s var(--ease);z-index:3}
+.tribuna-feature:hover{border-color:var(--bronze-deep)}
+.tribuna-feature:hover::before{width:100%}
+
+.feature-media{position:relative;min-height:380px;background:linear-gradient(135deg,var(--bg-3) 0%,var(--bg) 100%);overflow:hidden}
+.feature-thumb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.feature-overlay{position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(184,137,90,.18),transparent 65%),radial-gradient(circle at 70% 70%,rgba(184,137,90,.10),transparent 60%);transition:opacity .6s ease}
+.feature-mark{position:absolute;font-family:var(--serif);font-size:clamp(180px,22vw,320px);font-weight:300;font-style:italic;color:transparent;-webkit-text-stroke:1px rgba(184,137,90,.22);line-height:1;letter-spacing:-.05em;opacity:.7;transition:opacity .5s ease,transform .8s var(--ease)}
+.tribuna-feature:hover .feature-mark{opacity:.9;transform:scale(1.04)}
+.feature-play{position:relative;z-index:2;width:88px;height:88px;border-radius:50%;background:rgba(13,13,11,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--bronze);display:flex;align-items:center;justify-content:center;color:var(--bronze);transition:all .5s var(--ease)}
+.feature-play svg{width:30px;height:30px;margin-left:4px}
+.tribuna-feature:hover .feature-play{background:var(--bronze);color:var(--bg);transform:scale(1.06)}
+
+.feature-info{padding:48px 44px;display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--line)}
+.feature-meta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--bone-mute);margin-bottom:24px}
+.feature-type{display:inline-flex;align-items:center;gap:8px;color:var(--bronze);padding:5px 11px;border:1px solid var(--bronze-deep);border-radius:var(--r-pill);background:rgba(184,137,90,.06)}
+.feature-cat{position:relative;padding-left:14px}
+.feature-cat::before{content:'';position:absolute;left:0;top:50%;width:3px;height:3px;background:var(--bone-mute);border-radius:50%;transform:translateY(-50%)}
+.feature-time{position:relative;padding-left:14px}
+.feature-time::before{content:'';position:absolute;left:0;top:50%;width:3px;height:3px;background:var(--bone-mute);border-radius:50%;transform:translateY(-50%)}
+.feature-title{font-family:var(--serif);font-size:clamp(28px,2.6vw,38px);font-weight:400;color:var(--bone);letter-spacing:-.018em;line-height:1.18;margin-bottom:18px;transition:color .4s}
+.feature-title .ital{font-style:italic;color:var(--bronze-soft)}
+.tribuna-feature:hover .feature-title{color:var(--bronze-soft)}
+.feature-desc{font-size:15px;color:var(--bone-soft);line-height:1.65;margin-bottom:28px;max-width:480px}
+.feature-cta{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze);display:inline-flex;align-items:center;gap:12px;transition:gap .35s ease;align-self:flex-start;padding-bottom:6px;border-bottom:1px solid var(--bronze)}
+.tribuna-feature:hover .feature-cta{gap:18px}
+
+/* GRID EDITORIAL ASSIMÉTRICO */
+.tribuna-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.tribuna-card{padding:32px 30px;background:var(--bg);text-decoration:none;color:inherit;display:flex;flex-direction:column;min-height:300px;position:relative;overflow:hidden;transition:background .4s ease;grid-column:span 4}
+.tribuna-card.card-large{grid-column:span 6;min-height:340px}
+.tribuna-card:nth-child(2){grid-column:span 6}
+.tribuna-card:nth-child(3){grid-column:span 6;min-height:380px;display:grid;grid-template-rows:auto auto auto auto;gap:0}
+.tribuna-card:nth-child(4){grid-column:span 6}
+.tribuna-card:nth-child(5){grid-column:span 6}
+.tribuna-card:hover{background:var(--bg-2)}
+.tribuna-card[data-hidden]{display:none}
+.tribuna-feature[data-hidden]{display:none}
+
+.card-thumb{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,var(--bg-3) 0%,var(--bg) 100%);margin:-32px -30px 24px;overflow:hidden;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
+.thumb-mark{position:absolute;font-family:var(--serif);font-size:clamp(120px,14vw,180px);font-weight:300;font-style:italic;color:transparent;-webkit-text-stroke:1px rgba(184,137,90,.18);line-height:1;letter-spacing:-.05em;opacity:.6;transition:opacity .5s ease,transform .8s var(--ease)}
+.tribuna-card:hover .thumb-mark{opacity:.85;transform:scale(1.04)}
+.thumb-play{position:relative;z-index:2;width:60px;height:60px;border-radius:50%;background:rgba(13,13,11,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--bronze);display:flex;align-items:center;justify-content:center;color:var(--bronze);transition:all .45s var(--ease)}
+.thumb-play svg{width:22px;height:22px;margin-left:3px}
+.tribuna-card:hover .thumb-play{background:var(--bronze);color:var(--bg);transform:scale(1.08)}
+
+.card-meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--bone-mute);margin-bottom:20px}
+.card-type{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--line);border-radius:var(--r-pill);transition:all .35s}
+.card-type.video{color:var(--bronze);border-color:var(--bronze-deep);background:rgba(184,137,90,.06)}
+.card-type.artigo{color:var(--bone-soft);border-color:var(--line-strong)}
+.card-type.orientacao{color:var(--bone-soft);border-color:var(--line-strong)}
+.card-type svg{flex-shrink:0}
+.card-cat{position:relative;padding-left:12px;color:var(--bronze)}
+.card-cat::before{content:'';position:absolute;left:0;top:50%;width:3px;height:3px;background:var(--bone-mute);border-radius:50%;transform:translateY(-50%)}
+.card-time{margin-left:auto;color:var(--bone-mute)}
+.card-title{font-family:var(--serif);font-size:clamp(20px,1.7vw,24px);font-weight:400;color:var(--bone);letter-spacing:-.012em;line-height:1.25;margin-bottom:14px;transition:color .35s}
+.card-title .ital{font-style:italic;color:var(--bronze-soft)}
+.tribuna-card.card-large .card-title{font-size:clamp(22px,2vw,28px);margin-bottom:16px}
+.tribuna-card:hover .card-title{color:var(--bronze-soft)}
+.card-excerpt{font-size:14px;color:var(--bone-mute);line-height:1.65;margin-bottom:20px;flex:1}
+.card-arrow{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--bone-mute);display:inline-flex;align-items:center;gap:10px;margin-top:auto;transition:gap .3s,color .3s}
+.tribuna-card:hover .card-arrow{gap:18px;color:var(--bronze)}
+
+/* RODAPÉ DA TRIBUNA */
+.tribuna-foot{margin-top:48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;padding-top:32px;border-top:1px solid var(--line)}
+.tribuna-cta{font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--bg);background:var(--bone);padding:18px 30px;text-decoration:none;border-radius:var(--r-pill);display:inline-flex;align-items:center;gap:14px;border:1px solid var(--bone);transition:all .4s var(--ease)}
+.tribuna-cta:hover{background:var(--bronze);border-color:var(--bronze)}
+.tribuna-cta svg{width:14px;height:14px;transition:transform .4s var(--ease)}
+.tribuna-cta:hover svg{transform:translateX(4px)}
+.tribuna-foot-meta{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--bone-mute)}
+
+/* RESPONSIVO */
+@media(max-width:1024px){
+  .tribuna-feature{grid-template-columns:1fr}
+  .feature-media{min-height:280px;aspect-ratio:16/9}
+  .feature-info{padding:36px 32px;border-left:none;border-top:1px solid var(--line)}
+  .tribuna-grid{grid-template-columns:repeat(6,1fr)}
+  .tribuna-card,.tribuna-card.card-large,.tribuna-card:nth-child(n){grid-column:span 6;min-height:auto}
+}
 @media(max-width:900px){
-  .insights-header{grid-template-columns:1fr;gap:24px;margin-bottom:40px}
-  .insights-grid{grid-template-columns:1fr}
-  .insight{min-height:220px;padding:28px 24px}
+  .tribuna-header{grid-template-columns:1fr;gap:24px;margin-bottom:40px}
+  .feature-media{min-height:240px}
+  .feature-play{width:64px;height:64px}
+  .feature-play svg{width:22px;height:22px}
+  .feature-info{padding:32px 26px}
+  .feature-title{font-size:24px}
+  .feature-meta{gap:10px}
+  .tribuna-card{padding:28px 24px}
+  .card-thumb{margin:-28px -24px 20px}
+  .tribuna-foot{flex-direction:column;align-items:stretch;text-align:center}
+  .tribuna-cta{justify-content:center}
 }
 
 /* FAQ */
@@ -866,10 +949,127 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
   </div>
 </section>
 
+<!-- TRIBUNA — Central editorial de conteúdo do escritório -->
+<section class="tribuna section-pad" id="tribuna">
+  <div class="container">
+
+    <div class="tribuna-header">
+      <div class="reveal">
+        <div class="section-label">05 — Tribuna Stank</div>
+        <h2 class="section-title">Análises que <span class="ital">esclarecem,</span><br>orientações que <span class="ital">posicionam.</span></h2>
+      </div>
+      <div class="reveal">
+        <p class="section-intro">A Tribuna é o espaço onde o escritório compartilha vídeos, artigos e orientações sobre temas jurídicos de impacto real. Conteúdo produzido pelos núcleos da Stank — para quem prefere entender antes de decidir.</p>
+        <div class="tribuna-filters" role="tablist" aria-label="Filtrar conteúdo">
+          <button class="tribuna-filter active" data-filter="all" role="tab" aria-selected="true">Tudo</button>
+          <button class="tribuna-filter" data-filter="video" role="tab" aria-selected="false">Vídeos</button>
+          <button class="tribuna-filter" data-filter="artigo" role="tab" aria-selected="false">Artigos</button>
+          <button class="tribuna-filter" data-filter="orientacao" role="tab" aria-selected="false">Orientações</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESTAQUE PRINCIPAL — vídeo feature -->
+    <a href="#" class="tribuna-feature reveal" data-type="video">
+      <div class="feature-media">
+        <div class="feature-thumb" aria-hidden="true">
+          <span class="feature-overlay"></span>
+          <span class="feature-mark">S<i style="font-style:italic">.</i></span>
+          <span class="feature-play">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 5V19L19 12L8 5Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </div>
+      <div class="feature-info">
+        <div class="feature-meta">
+          <span class="feature-type">
+            <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 5V19L19 12L8 5Z" stroke-linejoin="round" fill="currentColor"/></svg>
+            Vídeo · Em destaque
+          </span>
+          <span class="feature-cat">Trabalhista</span>
+          <span class="feature-time">12 min</span>
+        </div>
+        <h3 class="feature-title">Acordo trabalhista ou rescisão padrão? <span class="ital">O que pesa</span> na decisão antes de assinar.</h3>
+        <p class="feature-desc">Análise do nosso núcleo trabalhista sobre os pontos que costumam passar despercebidos em negociações de saída — e o que considerar antes de fechar qualquer acordo.</p>
+        <span class="feature-cta">Assistir análise completa <span>→</span></span>
+      </div>
+    </a>
+
+    <!-- GRID EDITORIAL SECUNDÁRIO -->
+    <div class="tribuna-grid">
+
+      <a href="#" class="tribuna-card card-large reveal" data-type="artigo">
+        <div class="card-meta">
+          <span class="card-type artigo"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h14M5 9h14M5 14h10M5 19h7"/></svg> Artigo</span>
+          <span class="card-cat">Família</span>
+          <span class="card-time">07 min</span>
+        </div>
+        <h3 class="card-title">Divórcio <span class="ital">consensual</span>: o caminho menos desgastante e seus cuidados essenciais.</h3>
+        <p class="card-excerpt">Quando há acordo entre as partes, o processo pode ser conduzido com agilidade e sobriedade. Mas alguns pontos exigem atenção técnica para evitar revisões futuras.</p>
+        <span class="card-arrow">Ler análise <span>→</span></span>
+      </a>
+
+      <a href="#" class="tribuna-card reveal" data-type="orientacao">
+        <div class="card-meta">
+          <span class="card-type orientacao"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg> Orientação</span>
+          <span class="card-cat">Previdenciário</span>
+        </div>
+        <h3 class="card-title">Como avaliar se você já tem <span class="ital">direito</span> à aposentadoria.</h3>
+        <span class="card-arrow">Ler orientação <span>→</span></span>
+      </a>
+
+      <a href="#" class="tribuna-card reveal" data-type="video">
+        <div class="card-thumb" aria-hidden="true">
+          <span class="thumb-play">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 5V19L19 12L8 5Z" fill="currentColor" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="thumb-mark">S<i style="font-style:italic">.</i></span>
+        </div>
+        <div class="card-meta">
+          <span class="card-type video"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 5V19L19 12L8 5Z" stroke-linejoin="round" fill="currentColor"/></svg> Vídeo</span>
+          <span class="card-cat">Cível</span>
+          <span class="card-time">06 min</span>
+        </div>
+        <h3 class="card-title">Contratos: três cláusulas que <span class="ital">mudam tudo</span> em caso de disputa.</h3>
+        <span class="card-arrow">Assistir <span>→</span></span>
+      </a>
+
+      <a href="#" class="tribuna-card reveal" data-type="artigo">
+        <div class="card-meta">
+          <span class="card-type artigo"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h14M5 9h14M5 14h10M5 19h7"/></svg> Artigo</span>
+          <span class="card-cat">Empresarial</span>
+          <span class="card-time">09 min</span>
+        </div>
+        <h3 class="card-title">Compliance trabalhista: o que muda quando a empresa atua <span class="ital">de forma preventiva</span>.</h3>
+        <span class="card-arrow">Ler análise <span>→</span></span>
+      </a>
+
+      <a href="#" class="tribuna-card reveal" data-type="orientacao">
+        <div class="card-meta">
+          <span class="card-type orientacao"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg> Orientação</span>
+          <span class="card-cat">Trabalhista</span>
+        </div>
+        <h3 class="card-title">Pediu demissão? <span class="ital">Quatro pontos</span> que pouca gente verifica.</h3>
+        <span class="card-arrow">Ler orientação <span>→</span></span>
+      </a>
+
+    </div>
+
+    <div class="tribuna-foot reveal">
+      <a href="#" class="tribuna-cta">
+        Explorar todas as publicações
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <span class="tribuna-foot-meta">Atualizado periodicamente pelos núcleos do escritório</span>
+    </div>
+
+  </div>
+</section>
+
 <section class="para-quem section-pad" id="para-quem">
   <div class="container">
     <div class="pq-header reveal">
-      <div class="section-label">05 — Quem o escritório atende</div>
+      <div class="section-label">06 — Quem o escritório atende</div>
       <h2 class="section-title">Pessoas <span class="ital">e</span> empresas.</h2>
     </div>
     <div class="pq-grid">
@@ -904,7 +1104,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
 
 <section class="sobre section-pad" id="sobre">
   <div class="container">
-    <div class="reveal" style="margin-bottom:32px"><div class="section-label">06 — A Sociedade</div></div>
+    <div class="reveal" style="margin-bottom:32px"><div class="section-label">07 — A Sociedade</div></div>
 
     <blockquote class="sobre-quote reveal">
       Acreditamos que advocacia se faz com <span class="ital">presença, clareza</span> e respeito ao tempo de cada cliente — não com pressa, nem com promessas.
@@ -945,7 +1145,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
   <div class="container">
     <div class="dif-header">
       <div class="reveal">
-        <div class="section-label">07 — O que diferencia o escritório</div>
+        <div class="section-label">08 — O que diferencia o escritório</div>
         <h2 class="section-title">Atuação <span class="ital">construída</span> em detalhes.</h2>
       </div>
       <p class="section-intro reveal">Nenhum diferencial isolado faz uma boa advocacia. É o conjunto — postura, método e cuidado institucional — que constrói confiança ao longo do tempo.</p>
@@ -958,36 +1158,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
       <div class="dif-item reveal"><span class="dif-num">005 / Empresarial</span><h3 class="dif-title">Estrutura para <span class="ital">empresas</span>.</h3><p class="dif-desc">Assessoria continuada ou pontual em consultivo e contencioso, alinhada à realidade da operação de cada cliente.</p></div>
       <div class="dif-item reveal"><span class="dif-num">006 / Transparência</span><h3 class="dif-title">Cenários reais, <span class="ital">não promessas</span>.</h3><p class="dif-desc">Apresentamos riscos, possibilidades e custos com honestidade — antes de qualquer compromisso formal com o escritório.</p></div>
     </div>
-  </div>
-</section>
-
-<section class="insights section-pad" id="insights">
-  <div class="container">
-    <div class="insights-header">
-      <div class="reveal">
-        <div class="section-label">08 — Insights Jurídicos</div>
-        <h2 class="section-title">Conteúdo que <span class="ital">esclarece.</span></h2>
-      </div>
-      <p class="section-intro reveal">Material informativo produzido pelos núcleos do escritório sobre dúvidas frequentes — porque entender o terreno antes de agir é parte da boa orientação.</p>
-    </div>
-    <div class="insights-grid">
-      <a href="#" class="insight reveal">
-        <div class="insight-meta"><span class="cat">Trabalhista</span><span>05 min</span></div>
-        <h3 class="insight-title">O que considerar antes de pedir <span class="ital">demissão</span> ou aceitar acordo.</h3>
-        <span class="insight-arrow">Ler artigo <span>→</span></span>
-      </a>
-      <a href="#" class="insight reveal">
-        <div class="insight-meta"><span class="cat">Família</span><span>07 min</span></div>
-        <h3 class="insight-title">Divórcio <span class="ital">consensual</span>: caminhos possíveis e cuidados essenciais.</h3>
-        <span class="insight-arrow">Ler artigo <span>→</span></span>
-      </a>
-      <a href="#" class="insight reveal">
-        <div class="insight-meta"><span class="cat">Previdenciário</span><span>06 min</span></div>
-        <h3 class="insight-title">Como avaliar se você já tem <span class="ital">direito</span> à aposentadoria.</h3>
-        <span class="insight-arrow">Ler artigo <span>→</span></span>
-      </a>
-    </div>
-    <div class="insights-foot reveal"><a href="#">Em breve · Central de Conhecimento</a></div>
   </div>
 </section>
 
@@ -1150,6 +1320,18 @@ if('IntersectionObserver' in window){
   const ob=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ob.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -60px 0px'});
   reveals.forEach(el=>ob.observe(el));
 }else{reveals.forEach(el=>el.classList.add('in'))}
+
+document.querySelectorAll('.tribuna-filter').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const filter=btn.getAttribute('data-filter');
+    document.querySelectorAll('.tribuna-filter').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false')});
+    btn.classList.add('active');btn.setAttribute('aria-selected','true');
+    document.querySelectorAll('.tribuna-grid .tribuna-card, .tribuna-feature').forEach(card=>{
+      const t=card.getAttribute('data-type');
+      if(filter==='all'||t===filter){card.removeAttribute('data-hidden')}else{card.setAttribute('data-hidden','')}
+    });
+  });
+});
 
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
