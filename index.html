@@ -132,7 +132,7 @@
 @media(max-width:900px){:root{--pad:22px}}
 
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-body{font-family:var(--sans);background:var(--bg);color:var(--bone);font-weight:300;line-height:1.6;font-size:16px;overflow-x:hidden}
+body{font-family:var(--sans);background:var(--bg);color:var(--bone);font-weight:300;line-height:1.6;font-size:16px;overflow-x:hidden;font-feature-settings:"liga" 1,"calt" 1,"kern" 1,"ss01" 1;text-rendering:optimizeLegibility}
 ::selection{background:var(--bronze);color:var(--bg)}
 ::-webkit-scrollbar{width:8px}
 ::-webkit-scrollbar-track{background:var(--bg)}
@@ -189,11 +189,11 @@ img,svg{max-width:100%;display:block}
 
 /* HERO */
 .hero{min-height:100vh;position:relative;display:flex;flex-direction:column;padding:130px var(--pad) 64px;overflow:hidden}
-.hero-meta{display:flex;align-items:center;gap:18px;font-family:var(--mono);font-size:10px;letter-spacing:.26em;color:var(--bone-mute);text-transform:uppercase;margin-bottom:clamp(40px,9vh,96px);flex-wrap:wrap}
-.hero-meta::before{content:'';width:32px;height:1px;background:var(--bronze)}
-.hero-meta strong{color:var(--bone-soft);font-weight:400;letter-spacing:.26em}
-.hero-meta .sep{color:var(--bone-dim)}
-.hero-headline{font-family:var(--serif);font-size:clamp(46px,9.6vw,152px);font-weight:300;line-height:.94;letter-spacing:-.034em;color:var(--bone)}
+.hero-meta{display:flex;align-items:center;gap:18px;font-family:var(--mono);font-size:10px;letter-spacing:.28em;color:var(--bone-mute);text-transform:uppercase;margin-bottom:clamp(48px,10vh,104px);flex-wrap:wrap}
+.hero-meta-mark{width:6px;height:6px;border-radius:50%;background:var(--bronze);box-shadow:0 0 12px rgba(184,137,90,.5);flex-shrink:0;animation:pulse 3s ease-in-out infinite}
+.hero-meta strong{color:var(--bone-soft);font-weight:400;letter-spacing:.28em;font-family:var(--serif);font-style:italic;text-transform:none;font-size:13px}
+.hero-meta .sep{color:var(--bone-dim);opacity:.6}
+.hero-headline{font-family:var(--serif);font-size:clamp(48px,9.4vw,148px);font-weight:300;line-height:.92;letter-spacing:-.038em;color:var(--bone);font-feature-settings:"liga" 1,"calt" 1,"kern" 1}
 .hero-headline .line{display:block;overflow:hidden;padding:.04em 0}
 .hero-headline .line span{display:inline-block;transform:translateY(110%);opacity:0;animation:rise 1s var(--ease-out) forwards}
 .hero-headline .line:nth-child(1) span{animation-delay:.15s}
@@ -203,7 +203,7 @@ img,svg{max-width:100%;display:block}
 .hero-headline .ital{font-style:italic;color:var(--bronze-soft);font-weight:400}
 .hero-bottom{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:end;margin-top:clamp(48px,9vh,96px);opacity:0;animation:fadeUp 1s ease .9s forwards}
 @keyframes fadeUp{to{opacity:1}}
-.hero-sub{max-width:540px;font-size:clamp(15px,1.15vw,17px);font-weight:300;line-height:1.62;color:var(--bone-soft);letter-spacing:-.003em}
+.hero-sub{max-width:560px;font-size:clamp(15.5px,1.18vw,17.5px);font-weight:300;line-height:1.66;color:var(--bone-soft);letter-spacing:-.005em}
 .hero-actions{display:flex;flex-direction:column;gap:22px;align-items:flex-end}
 
 .btn-primary{display:inline-flex;align-items:center;gap:16px;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--bg);background:linear-gradient(135deg,var(--bone) 0%,var(--bone-soft) 100%);padding:20px 34px;text-decoration:none;border:1px solid var(--bone);border-radius:var(--r-pill);position:relative;overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease);box-shadow:0 6px 24px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.2)}
@@ -220,14 +220,13 @@ img,svg{max-width:100%;display:block}
 .hero-mark{position:absolute;right:var(--pad);top:14%;font-family:var(--serif);font-size:clamp(220px,30vw,460px);font-weight:300;font-style:italic;color:transparent;-webkit-text-stroke:1px rgba(184,137,90,.16);line-height:1;pointer-events:none;user-select:none;z-index:0;letter-spacing:-.05em;opacity:0;animation:fadeIn 1.6s ease .6s forwards}
 @keyframes fadeIn{to{opacity:1}}
 
-.hero-ticker{position:absolute;bottom:24px;left:var(--pad);right:var(--pad);display:flex;align-items:center;justify-content:space-between;gap:20px;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--bone-mute);border-top:1px solid rgba(242,237,226,.08);padding-top:18px;opacity:0;animation:fadeUp 1s ease 1.2s forwards}
+.hero-ticker{position:absolute;bottom:24px;left:var(--pad);right:var(--pad);display:flex;align-items:center;justify-content:space-between;gap:24px;font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--bone-mute);padding-top:18px;opacity:0;animation:fadeUp 1s ease 1.2s forwards}
+.hero-ticker::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(184,137,90,.3) 50%,transparent)}
 .hero-ticker .status{display:inline-flex;align-items:center;gap:10px}
 .hero-ticker .dot{display:inline-block;width:6px;height:6px;background:var(--success);border-radius:50%;box-shadow:0 0 0 0 rgba(111,191,142,.6);animation:pulse 2.4s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(111,191,142,.6)}70%{box-shadow:0 0 0 8px rgba(111,191,142,0)}100%{box-shadow:0 0 0 0 rgba(111,191,142,0)}}
-.hero-ticker-mid{display:flex;gap:28px}
-.hero-ticker-mid span{color:var(--bone-soft);position:relative}
-.hero-ticker-mid span+span{padding-left:28px}
-.hero-ticker-mid span+span::before{content:'·';color:var(--bone-dim);position:absolute;left:8px;top:50%;transform:translateY(-50%)}
+.hero-ticker-line{font-family:var(--serif);font-style:italic;font-size:13px;letter-spacing:.04em;color:var(--bronze-soft);text-transform:none;font-weight:400;flex:1;text-align:center}
+.hero-ticker-loc{color:var(--bone-soft)}
 
 @media(max-width:900px){
   .hero{padding:96px 22px 120px;min-height:auto}
@@ -240,9 +239,7 @@ img,svg{max-width:100%;display:block}
   .btn-secondary{align-self:center}
   .hero-mark{right:-18px;top:auto;bottom:130px;font-size:38vw;opacity:.55}
   .hero-ticker{left:22px;right:22px;flex-direction:column;gap:10px;align-items:flex-start;bottom:16px;padding-top:14px}
-  .hero-ticker-mid{gap:18px;flex-wrap:wrap}
-  .hero-ticker-mid span+span{padding-left:0}
-  .hero-ticker-mid span+span::before{display:none}
+  .hero-ticker-line{flex:none;text-align:left;font-size:12px}
 }
 
 /* MARQUEE */
@@ -255,12 +252,12 @@ img,svg{max-width:100%;display:block}
 
 /* SECTION BASE */
 section{position:relative}
-.section-pad{padding:clamp(80px,13vh,140px) 0}
-.section-label{display:inline-flex;align-items:center;gap:14px;font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--bronze);margin-bottom:28px}
-.section-label::before{content:'';width:28px;height:1px;background:var(--bronze)}
-.section-title{font-family:var(--serif);font-size:clamp(36px,5.5vw,76px);font-weight:300;line-height:1;letter-spacing:-.025em;color:var(--bone);margin-bottom:28px}
+.section-pad{padding:clamp(96px,15vh,168px) 0}
+.section-label{display:inline-flex;align-items:center;gap:16px;font-family:var(--mono);font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--bronze);margin-bottom:32px;padding:6px 0}
+.section-label::before{content:'';width:32px;height:1px;background:linear-gradient(90deg,transparent,var(--bronze))}
+.section-title{font-family:var(--serif);font-size:clamp(38px,5.6vw,80px);font-weight:300;line-height:1;letter-spacing:-.028em;color:var(--bone);margin-bottom:32px}
 .section-title .ital{font-style:italic;color:var(--bronze-soft);font-weight:400}
-.section-intro{font-size:clamp(15px,1.1vw,17px);line-height:1.62;color:var(--bone-soft);font-weight:300;max-width:580px}
+.section-intro{font-size:clamp(15px,1.15vw,17.5px);line-height:1.68;color:var(--bone-soft);font-weight:300;max-width:600px;letter-spacing:-.001em}
 
 /* POSICIONAMENTO */
 .posicionamento{background:var(--bg)}
@@ -276,7 +273,7 @@ section{position:relative}
 .pillar:hover::before{opacity:1}
 .pillar:nth-child(odd){border-top-left-radius:var(--r-xl)}
 .pillar:nth-child(even){border-bottom-right-radius:var(--r-xl)}
-.pillar-num{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--bronze);margin-bottom:14px}
+.pillar-num{font-family:var(--serif);font-style:italic;font-size:18px;letter-spacing:.02em;color:var(--bronze);margin-bottom:18px}
 .pillar-title{font-family:var(--serif);font-size:21px;font-weight:400;color:var(--bone);margin-bottom:8px;letter-spacing:-.01em}
 .pillar-desc{font-size:13.5px;color:var(--bone-mute);line-height:1.6}
 @media(max-width:900px){.pos-grid{grid-template-columns:1fr;gap:32px}.pos-left{position:static}.pillars{grid-template-columns:1fr}}
@@ -381,7 +378,7 @@ section{position:relative}
 .para-quem::before{content:'';position:absolute;top:50%;left:-200px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(184,137,90,.04) 0%,transparent 60%);pointer-events:none;transform:translateY(-50%)}
 .pq-header{text-align:center;margin-bottom:64px}
 .pq-header .section-label{justify-content:center}
-.pq-header .section-label::after{content:'';width:28px;height:1px;background:var(--bronze)}
+.pq-header .section-label::after{content:'';width:32px;height:1px;background:linear-gradient(90deg,var(--bronze),transparent)}
 .pq-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .pq-card{padding:56px 44px;background:linear-gradient(165deg,rgba(26,25,21,.85) 0%,rgba(19,19,16,.5) 100%);border:1px solid rgba(242,237,226,.06);border-radius:var(--r-xl);position:relative;overflow:hidden;transition:transform .55s var(--ease),border-color .55s ease}
 .pq-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 100% 0%,rgba(184,137,90,.12),transparent 60%);opacity:0;transition:opacity .55s ease;pointer-events:none}
@@ -588,7 +585,7 @@ section{position:relative}
 .faq-q{width:100%;display:grid;grid-template-columns:36px 1fr 22px;gap:20px;align-items:center;padding:24px 28px;background:none;border:none;text-align:left;cursor:pointer;color:inherit;transition:padding .35s var(--ease);font-family:inherit;border-radius:var(--r-md)}
 .faq-q:hover{padding-left:32px}
 .faq-q .faq-num{font-family:var(--mono);font-size:11px;color:var(--bronze);letter-spacing:.15em}
-.faq-q .faq-q-text{font-family:var(--serif);font-size:clamp(17px,1.7vw,22px);font-weight:400;color:var(--bone);letter-spacing:-.01em;line-height:1.3}
+.faq-q .faq-q-text{font-family:var(--serif);font-size:clamp(17px,1.7vw,22px);font-weight:400;color:var(--bone);letter-spacing:-.014em;line-height:1.32}
 .faq-q .faq-icon{width:22px;height:22px;position:relative;transition:transform .45s var(--ease)}
 .faq-q .faq-icon::before,.faq-q .faq-icon::after{content:'';position:absolute;background:var(--bone-soft);transition:background .35s}
 .faq-q .faq-icon::before{left:0;right:0;top:50%;height:1px}
@@ -609,8 +606,9 @@ section{position:relative}
 .cta-final{background:radial-gradient(ellipse at center,rgba(26,25,21,.6) 0%,var(--bg) 80%);text-align:center;position:relative;overflow:hidden;padding:clamp(110px,16vh,160px) 0 100px}
 .cta-final::after{content:'';position:absolute;top:0;left:50%;width:60%;height:1px;background:linear-gradient(90deg,transparent,rgba(184,137,90,.4),transparent);transform:translateX(-50%)}
 .cta-final::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(184,137,90,.06),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
-.cta-final-meta{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--bronze);margin-bottom:28px;display:inline-flex;align-items:center;gap:12px}
-.cta-final-meta::before,.cta-final-meta::after{content:'';width:24px;height:1px;background:var(--bronze)}
+.cta-final-meta{font-family:var(--mono);font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--bronze);margin-bottom:32px;display:inline-flex;align-items:center;gap:16px}
+.cta-final-meta::before{content:'';width:32px;height:1px;background:linear-gradient(90deg,transparent,var(--bronze))}
+.cta-final-meta::after{content:'';width:32px;height:1px;background:linear-gradient(90deg,var(--bronze),transparent)}
 .cta-final-title{font-family:var(--serif);font-size:clamp(44px,8vw,124px);font-weight:300;line-height:.98;letter-spacing:-.035em;color:var(--bone);margin-bottom:36px;position:relative}
 .cta-final-title .ital{font-style:italic;color:var(--bronze-soft)}
 .cta-final-sub{font-size:17px;line-height:1.62;color:var(--bone-soft);max-width:580px;margin:0 auto 48px}
@@ -742,65 +740,57 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
     </path>
   </svg>
   <div class="hero-meta">
-    <span><strong>Stank Sociedade de Advogados</strong></span>
+    <span class="hero-meta-mark"></span>
+    <span><strong>Stank</strong> · Sociedade de Advogados</span>
     <span class="sep">/</span>
-    <span>OAB/SP nº 0.000</span>
-    <span class="sep">/</span>
-    <span>São Paulo · SP</span>
+    <span>Estabelecida em São Paulo</span>
   </div>
 
   <h1 class="hero-headline">
-    <span class="line"><span>Um escritório</span></span>
-    <span class="line"><span><i class="ital">estruturado</i> para</span></span>
-    <span class="line"><span>defender o seu lado.</span></span>
+    <span class="line"><span>Quando o direito</span></span>
+    <span class="line"><span>exige <i class="ital">presença</i>,</span></span>
+    <span class="line"><span>existe a Stank.</span></span>
   </h1>
 
   <div class="hero-mark" aria-hidden="true">S<i style="font-style:italic">.</i></div>
 
   <div class="hero-bottom">
     <p class="hero-sub">
-      Sociedade de advogados com atuação coordenada em Direito Trabalhista, Cível, Família e Previdenciário — para pessoas físicas e empresas. Cada demanda passa pela análise técnica do nosso corpo jurídico antes de qualquer movimento. Atendimento presencial em São Paulo e online em todo o Brasil.
+      Sociedade de advogados com atuação coordenada em Direito Trabalhista, Cível, Família e Previdenciário — para pessoas e empresas que exigem técnica antes de qualquer movimento. Atendimento presencial em São Paulo, online em todo o Brasil.
     </p>
     <div class="hero-actions">
       <a href="https://wa.me/5511000000000?text=Ol%C3%A1.%20Gostaria%20de%20uma%20an%C3%A1lise%20inicial%20do%20meu%20caso." target="_blank" rel="noopener" class="btn-primary" data-track="wa_hero">
         <span>Solicitar análise inicial</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a href="#estrutura" class="btn-secondary">Conhecer o escritório <span>↓</span></a>
+      <a href="#estrutura" class="btn-secondary">A estrutura do escritório <span>↓</span></a>
     </div>
   </div>
 
   <div class="hero-ticker">
     <span class="status">
       <span class="dot" aria-hidden="true"></span>
-      <span id="statusLabel">Escritório disponível para novos atendimentos</span>
+      <span id="statusLabel">Aceitando novas demandas</span>
     </span>
-    <div class="hero-ticker-mid">
-      <span>Pessoas Físicas</span>
-      <span>Empresas</span>
-      <span>Consultivo</span>
-      <span>Contencioso</span>
-    </div>
-    <span>Online · Presencial</span>
+    <span class="hero-ticker-line">Análise · Estratégia · Atuação</span>
+    <span class="hero-ticker-loc">São Paulo · Brasil</span>
   </div>
 </section>
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span class="marquee-item">Sociedade de Advogados</span>
-    <span class="marquee-item">Direito Trabalhista</span>
-    <span class="marquee-item">Direito Cível</span>
-    <span class="marquee-item">Direito de Família</span>
-    <span class="marquee-item">Direito Previdenciário</span>
-    <span class="marquee-item">Consultivo &amp; Contencioso</span>
-    <span class="marquee-item">Pessoas Físicas &amp; Empresas</span>
-    <span class="marquee-item">Sociedade de Advogados</span>
-    <span class="marquee-item">Direito Trabalhista</span>
-    <span class="marquee-item">Direito Cível</span>
-    <span class="marquee-item">Direito de Família</span>
-    <span class="marquee-item">Direito Previdenciário</span>
-    <span class="marquee-item">Consultivo &amp; Contencioso</span>
-    <span class="marquee-item">Pessoas Físicas &amp; Empresas</span>
+    <span class="marquee-item">Análise antes de ação</span>
+    <span class="marquee-item">Estratégia antes de processo</span>
+    <span class="marquee-item">Atuação coordenada</span>
+    <span class="marquee-item">Atendimento institucional</span>
+    <span class="marquee-item">Pessoas &amp; Empresas</span>
+    <span class="marquee-item">Stank · Sociedade de Advogados</span>
+    <span class="marquee-item">Análise antes de ação</span>
+    <span class="marquee-item">Estratégia antes de processo</span>
+    <span class="marquee-item">Atuação coordenada</span>
+    <span class="marquee-item">Atendimento institucional</span>
+    <span class="marquee-item">Pessoas &amp; Empresas</span>
+    <span class="marquee-item">Stank · Sociedade de Advogados</span>
   </div>
 </div>
 
@@ -810,18 +800,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
       <div class="pos-left reveal">
         <div class="section-label">01 — Posicionamento</div>
         <h2 class="section-title">Estratégia <span class="ital">antes</span> de processo.</h2>
-        <p class="section-intro">A Stank existe a partir de um princípio simples: cada caso pede um caminho próprio. Antes de qualquer movimento jurídico, o escritório dedica tempo a análise, escuta e estratégia.</p>
+        <p class="section-intro">A Stank parte de um princípio simples: cada caso pede um caminho próprio. Antes de qualquer movimento jurídico, escuta. Antes de qualquer recomendação, análise.</p>
         <div class="pillars">
-          <div class="pillar"><div class="pillar-num">↳ 001</div><div class="pillar-title">Análise técnica</div><div class="pillar-desc">Avaliação criteriosa do caso pelo corpo jurídico antes de qualquer recomendação.</div></div>
-          <div class="pillar"><div class="pillar-num">↳ 002</div><div class="pillar-title">Comunicação clara</div><div class="pillar-desc">Linguagem direta sobre cenários, riscos e possibilidades reais.</div></div>
-          <div class="pillar"><div class="pillar-num">↳ 003</div><div class="pillar-title">Estratégia individual</div><div class="pillar-desc">Caminho desenhado para cada situação concreta — sem fórmulas prontas.</div></div>
-          <div class="pillar"><div class="pillar-num">↳ 004</div><div class="pillar-title">Acompanhamento</div><div class="pillar-desc">Atualização contínua durante todas as etapas do processo.</div></div>
+          <div class="pillar"><div class="pillar-num">i.</div><div class="pillar-title">Análise técnica</div><div class="pillar-desc">Avaliação criteriosa do caso pelo corpo jurídico antes de qualquer recomendação.</div></div>
+          <div class="pillar"><div class="pillar-num">ii.</div><div class="pillar-title">Comunicação clara</div><div class="pillar-desc">Linguagem direta sobre cenários, riscos e possibilidades reais.</div></div>
+          <div class="pillar"><div class="pillar-num">iii.</div><div class="pillar-title">Estratégia individual</div><div class="pillar-desc">Caminho desenhado para cada situação concreta — sem fórmulas prontas.</div></div>
+          <div class="pillar"><div class="pillar-num">iv.</div><div class="pillar-title">Acompanhamento</div><div class="pillar-desc">Atualização contínua durante todas as etapas do processo.</div></div>
         </div>
       </div>
       <div class="pos-text reveal">
-        <p>O direito contemporâneo exige <span class="accent">leitura precisa</span> antes da ação. Antes de propor qualquer caminho, dedicamos tempo a compreender o contexto — pessoal, jurídico, econômico — em que cada questão se apresenta.</p>
-        <p>Atendemos pessoas e empresas com a mesma postura: <span class="accent">técnica, sobriedade e proximidade</span>. Não trabalhamos com soluções genéricas. Cada orientação parte da escuta de quem está do outro lado.</p>
-        <p>O escritório atende presencialmente em São Paulo, para quem valoriza o encontro, e online em todo o Brasil, para quem prioriza agilidade. Em ambos os formatos, a mesma exigência de qualidade — porque o que está em jogo é o mesmo: a segurança de uma decisão bem informada e a tranquilidade de saber que o processo está em mãos preparadas.</p>
+        <p>O direito contemporâneo exige <span class="accent">leitura precisa</span> antes da ação. Antes de propor qualquer caminho, o escritório dedica tempo a compreender o contexto — pessoal, jurídico, econômico — em que cada questão se apresenta.</p>
+        <p>A Stank atende pessoas e empresas com a mesma postura: <span class="accent">técnica, sobriedade e proximidade</span>. Não há soluções genéricas. Há escuta, análise e um caminho construído para cada situação concreta.</p>
+        <p>Em São Paulo presencialmente, no Brasil inteiro online — sob o mesmo padrão de exigência. Porque o que está em jogo, em qualquer formato, é o mesmo: a segurança de uma decisão bem informada.</p>
       </div>
     </div>
   </div>
@@ -833,9 +823,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
     <div class="estrutura-header reveal">
       <div>
         <div class="section-label">02 — O Escritório</div>
-        <h2 class="section-title">Uma sociedade <span class="ital">estruturada</span> em quatro núcleos.</h2>
+        <h2 class="section-title">Quatro <span class="ital">núcleos</span>,<br>uma única exigência técnica.</h2>
       </div>
-      <p class="section-intro">A Stank organiza sua atuação em núcleos jurídicos especializados. Cada demanda é endereçada à frente competente, com suporte técnico coordenado entre as áreas — para que pessoas físicas e empresas recebam resposta profissional, e não improvisada.</p>
+      <p class="section-intro">A Stank organiza sua atuação em frentes especializadas. Cada demanda é endereçada ao núcleo competente, com suporte coordenado entre as áreas — para que pessoas e empresas recebam resposta institucional, e não improvisada.</p>
     </div>
 
     <div class="estrutura-grid">
@@ -864,19 +854,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
     <div class="estrutura-stats">
       <div class="stat reveal">
         <div class="stat-num">04</div>
-        <div class="stat-label"><strong>Núcleos jurídicos</strong><br>especializados</div>
+        <div class="stat-label"><strong>Núcleos</strong><br>especializados</div>
       </div>
       <div class="stat reveal">
         <div class="stat-num">02</div>
-        <div class="stat-label"><strong>Frentes de atuação</strong><br>consultivo &amp; contencioso</div>
+        <div class="stat-label"><strong>Frentes</strong><br>consultivo &amp; contencioso</div>
       </div>
       <div class="stat reveal">
         <div class="stat-num">PF<span style="color:var(--bone-mute)"> · </span>PJ</div>
-        <div class="stat-label"><strong>Pessoas físicas</strong><br>e empresas</div>
+        <div class="stat-label"><strong>Atuação</strong><br>pessoas e empresas</div>
       </div>
       <div class="stat reveal">
         <div class="stat-num">SP <span style="color:var(--bone-mute);font-style:normal">+</span> BR</div>
-        <div class="stat-label"><strong>Presencial em SP</strong><br>online em todo o Brasil</div>
+        <div class="stat-label"><strong>Atendimento</strong><br>presencial e online</div>
       </div>
     </div>
   </div>
@@ -918,7 +908,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
         <div class="section-label">04 — Áreas de Atuação</div>
         <h2 class="section-title">Quatro frentes,<br><span class="ital">uma mesma</span> técnica.</h2>
       </div>
-      <p class="section-intro reveal">A Stank concentra a atuação nas quatro áreas que mais afetam a vida das pessoas e a operação das empresas. Selecione abaixo para conhecer cada núcleo em detalhe.</p>
+      <p class="section-intro reveal">A Stank concentra a atuação nas quatro áreas que mais afetam a vida das pessoas e a operação das empresas. Selecione um núcleo para ver o que o escritório atua dentro dele.</p>
     </div>
 
     <div class="areas-list">
@@ -1027,7 +1017,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
         <h2 class="section-title">Análises que <span class="ital">esclarecem,</span><br>orientações que <span class="ital">posicionam.</span></h2>
       </div>
       <div class="reveal">
-        <p class="section-intro">A Tribuna é o espaço onde o escritório compartilha vídeos, artigos e orientações sobre temas jurídicos de impacto real. Conteúdo produzido pelos núcleos da Stank — para quem prefere entender antes de decidir.</p>
+        <p class="section-intro">A Tribuna reúne vídeos, artigos e orientações editados pelos núcleos da Stank sobre temas jurídicos de impacto real. Para quem prefere entender o terreno antes de decidir.</p>
         <div class="tribuna-filters" role="tablist" aria-label="Filtrar conteúdo">
           <button class="tribuna-filter active" data-filter="all" role="tab" aria-selected="true">Tudo</button>
           <button class="tribuna-filter" data-filter="video" role="tab" aria-selected="false">Vídeos</button>
@@ -1057,9 +1047,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
           <span class="feature-cat">Trabalhista</span>
           <span class="feature-time">12 min</span>
         </div>
-        <h3 class="feature-title">Acordo trabalhista ou rescisão padrão? <span class="ital">O que pesa</span> na decisão antes de assinar.</h3>
-        <p class="feature-desc">Análise do nosso núcleo trabalhista sobre os pontos que costumam passar despercebidos em negociações de saída — e o que considerar antes de fechar qualquer acordo.</p>
-        <span class="feature-cta">Assistir análise completa <span>→</span></span>
+        <h3 class="feature-title">Acordo de saída ou rescisão padrão? <span class="ital">O que pesa</span> antes de qualquer assinatura.</h3>
+        <p class="feature-desc">Uma análise do núcleo trabalhista sobre os detalhes que costumam passar despercebidos em negociações de desligamento — e o que precisa ser verificado antes de fechar.</p>
+        <span class="feature-cta">Assistir a análise <span>→</span></span>
       </div>
     </a>
 
@@ -1125,10 +1115,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
 
     <div class="tribuna-foot reveal">
       <a href="#" class="tribuna-cta">
-        Explorar todas as publicações
+        Explorar a Tribuna
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <span class="tribuna-foot-meta">Atualizado periodicamente pelos núcleos do escritório</span>
+      <span class="tribuna-foot-meta">Publicações editadas pelos núcleos do escritório</span>
     </div>
 
   </div>
@@ -1149,22 +1139,22 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
           <li>Atendimento humano e respeitoso</li>
           <li>Linguagem acessível, sem juridiquês</li>
           <li>Análise inicial sem compromisso</li>
-          <li>Acompanhamento ao longo do processo</li>
+          <li>Acompanhamento próximo do início ao fim</li>
         </ul>
-        <a href="https://wa.me/5511000000000?text=Ol%C3%A1.%20Sou%20pessoa%20f%C3%ADsica%20e%20preciso%20de%20uma%20orienta%C3%A7%C3%A3o%20jur%C3%ADdica." target="_blank" rel="noopener" class="pq-link" data-track="wa_pf">Falar como pessoa física <span>→</span></a>
+        <a href="https://wa.me/5511000000000?text=Ol%C3%A1.%20Sou%20pessoa%20f%C3%ADsica%20e%20preciso%20de%20uma%20orienta%C3%A7%C3%A3o%20jur%C3%ADdica." target="_blank" rel="noopener" class="pq-link" data-track="wa_pf">Apresentar minha situação <span>→</span></a>
       </div>
 
       <div class="pq-card reveal">
         <div class="pq-tag">Empresas</div>
         <h3 class="pq-title">Quando a operação exige <span class="ital">estrutura jurídica.</span></h3>
-        <p class="pq-desc">Para empresas que precisam de assessoria preventiva e contenciosa em rotinas trabalhistas, contratos, compliance e disputas comerciais. Atuação alinhada à realidade operacional e estratégica de cada negócio.</p>
+        <p class="pq-desc">Para empresas que precisam de assessoria preventiva e contenciosa em rotinas trabalhistas, contratos, compliance e disputas comerciais. Atuação alinhada à realidade operacional de cada negócio.</p>
         <ul class="pq-list">
           <li>Assessoria continuada ou pontual</li>
           <li>Revisão e elaboração de contratos</li>
           <li>Defesa em ações trabalhistas e cíveis</li>
           <li>Compliance e prevenção de riscos</li>
         </ul>
-        <a href="https://wa.me/5511000000000?text=Ol%C3%A1.%20Represento%20uma%20empresa%20e%20gostaria%20de%20conversar%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" class="pq-link" data-track="wa_pj">Falar como empresa <span>→</span></a>
+        <a href="https://wa.me/5511000000000?text=Ol%C3%A1.%20Represento%20uma%20empresa%20e%20gostaria%20de%20conversar%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" class="pq-link" data-track="wa_pj">Falar pela minha empresa <span>→</span></a>
       </div>
     </div>
   </div>
@@ -1175,20 +1165,21 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
     <div class="reveal" style="margin-bottom:32px"><div class="section-label">07 — A Sociedade</div></div>
 
     <blockquote class="sobre-quote reveal">
-      Acreditamos que advocacia se faz com <span class="ital">presença, clareza</span> e respeito ao tempo de cada cliente — não com pressa, nem com promessas.
+      Advocacia se faz com <span class="ital">presença, técnica</span> e respeito ao tempo de cada caso. Não com pressa, nem com promessas.
     </blockquote>
 
     <div class="sobre-body">
       <div class="sobre-text reveal">
-        <p>A Stank Sociedade de Advogados foi construída a partir de uma postura simples: estar ao lado de quem nos procura. Cada caso recebe o tempo necessário para ser compreendido pelo escritório antes de qualquer movimento.</p>
-        <p>Trabalhamos com transparência sobre cenários, riscos e custos. Não fazemos promessas — apresentamos análises. Não vendemos soluções prontas — desenhamos caminhos.</p>
-        <p>O escritório atende presencialmente em São Paulo para quem valoriza o encontro e online para quem prioriza praticidade. Em ambos os formatos, a mesma exigência: rigor técnico, comunicação direta e atenção real do nosso corpo jurídico.</p>
+        <p>A Stank foi construída a partir de uma postura simples: estar ao lado de quem nos procura. Cada caso recebe o tempo necessário para ser compreendido pelo escritório antes de qualquer movimento.</p>
+        <p>Não há promessas — há análises. Não há soluções prontas — há caminhos desenhados. Transparência sobre cenários, riscos e custos é o ponto de partida de toda relação que o escritório constrói.</p>
+        <p>Em São Paulo, presencialmente. No Brasil inteiro, online. Em ambos os formatos, a mesma exigência: rigor técnico, comunicação direta e atenção real do corpo jurídico da Stank.</p>
       </div>
       <div class="sobre-meta reveal">
         <div class="sobre-meta-row"><div class="sobre-meta-label">Razão social</div><div class="sobre-meta-value">Stank <span class="ital">Sociedade</span> de Advogados</div></div>
         <div class="sobre-meta-row"><div class="sobre-meta-label">Inscrição</div><div class="sobre-meta-value">OAB/SP nº 0.000</div></div>
-        <div class="sobre-meta-row"><div class="sobre-meta-label">Atendimento</div><div class="sobre-meta-value">Presencial em São Paulo <span class="ital">e</span> online em todo o Brasil.</div></div>
-        <div class="sobre-meta-row" style="border-bottom:none"><div class="sobre-meta-label">Atuação</div><div class="sobre-meta-value">Pessoas físicas <span class="ital">e</span> empresas, em consultivo e contencioso.</div></div>
+        <div class="sobre-meta-row"><div class="sobre-meta-label">Sede</div><div class="sobre-meta-value">São Paulo, <span class="ital">SP</span></div></div>
+        <div class="sobre-meta-row"><div class="sobre-meta-label">Atendimento</div><div class="sobre-meta-value">Presencial <span class="ital">e</span> online, em todo o Brasil</div></div>
+        <div class="sobre-meta-row"><div class="sobre-meta-label">Atuação</div><div class="sobre-meta-value">Pessoas <span class="ital">e</span> empresas — consultivo e contencioso</div></div>
       </div>
     </div>
 
@@ -1198,12 +1189,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
         <img src="logo-monogram.png" alt="Stank Sociedade de Advogados">
       </div>
       <div class="institucional-info">
-        <span class="label">Sociedade Registrada</span>
+        <span class="label">Sociedade de Advogados</span>
         <span class="name">Stank <span class="ital">Sociedade</span> de Advogados</span>
-        <span class="credentials"><span>OAB/SP nº 0.000</span> — Atuação coordenada em Direito Trabalhista, Cível, Família e Previdenciário</span>
+        <span class="credentials"><span>OAB/SP nº 0.000</span> · Trabalhista · Cível · Família · Previdenciário</span>
       </div>
       <a href="https://wa.me/5511000000000?text=Ol%C3%A1.%20Gostaria%20de%20conversar%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" class="institucional-cta" data-track="wa_institucional">
-        Falar com o escritório
+        Conversar com o escritório
       </a>
     </div>
   </div>
@@ -1214,9 +1205,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
     <div class="dif-header">
       <div class="reveal">
         <div class="section-label">08 — O que diferencia o escritório</div>
-        <h2 class="section-title">Atuação <span class="ital">construída</span> em detalhes.</h2>
+        <h2 class="section-title">Atuação <span class="ital">construída</span> nos detalhes.</h2>
       </div>
-      <p class="section-intro reveal">Nenhum diferencial isolado faz uma boa advocacia. É o conjunto — postura, método e cuidado institucional — que constrói confiança ao longo do tempo.</p>
+      <p class="section-intro reveal">Nenhum diferencial isolado constrói boa advocacia. É o conjunto — postura, método e cuidado institucional — que sustenta confiança ao longo do tempo.</p>
     </div>
     <div class="dif-grid">
       <div class="dif-item reveal"><span class="dif-num">001 / Postura</span><h3 class="dif-title">Comunicação <span class="ital">direta</span> em cada etapa.</h3><p class="dif-desc">Sem juridiquês desnecessário. Você entende o que está acontecendo, o que pode acontecer e o porquê de cada movimento do escritório.</p></div>
@@ -1235,7 +1226,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
       <div class="faq-left reveal">
         <div class="section-label">09 — Dúvidas Frequentes</div>
         <h2 class="section-title">Antes do <span class="ital">primeiro</span> contato.</h2>
-        <p class="section-intro">Algumas das perguntas que o escritório mais recebe antes do primeiro atendimento. Se a sua dúvida não estiver aqui, basta nos chamar.</p>
+        <p class="section-intro">As perguntas que mais recebemos antes do primeiro atendimento. Se a sua dúvida não estiver aqui, basta escrever — o escritório responde.</p>
       </div>
       <div class="faq-list">
         <div class="faq-item reveal">
@@ -1273,9 +1264,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
 
 <section class="cta-final" id="contato">
   <div class="container">
-    <div class="cta-final-meta reveal">Fale com o escritório</div>
-    <h2 class="cta-final-title reveal">Sua demanda <br>merece <span class="ital">análise.</span></h2>
-    <p class="cta-final-sub reveal">Apresente sua questão à Stank. Nossa equipe fará uma análise inicial e indicará o caminho mais adequado — com clareza, sem promessas e sem compromisso de seguir adiante.</p>
+    <div class="cta-final-meta reveal">Iniciar com a Stank</div>
+    <h2 class="cta-final-title reveal">A sua causa,<br>na <span class="ital">mesa certa.</span></h2>
+    <p class="cta-final-sub reveal">Apresente sua demanda à Stank. O escritório conduz uma análise inicial e indica o caminho mais adequado — com clareza, sem promessas e sem compromisso de prosseguir.</p>
     <div class="cta-final-actions reveal">
       <a href="https://wa.me/5511000000000?text=Ol%C3%A1.%20Gostaria%20de%20uma%20an%C3%A1lise%20inicial%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" class="btn-primary" data-track="wa_final">
         <span>Falar com o escritório</span>
@@ -1283,7 +1274,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
       </a>
       <a href="mailto:contato@stankadvocacia.com.br" class="btn-secondary">Ou enviar por e-mail <span>↗</span></a>
     </div>
-    <p class="cta-final-disclaimer reveal">O envio de mensagem não estabelece, automaticamente, relação advogado-cliente. Toda análise jurídica depende do caso concreto.</p>
+    <p class="cta-final-disclaimer reveal">O envio de mensagem não estabelece, por si só, relação advogado-cliente. Cada análise depende do caso concreto e da formalização entre as partes.</p>
   </div>
 </section>
 
@@ -1297,7 +1288,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
     <div class="footer-grid">
       <div class="footer-col">
         <h4>O Escritório</h4>
-        <p>Stank Sociedade de Advogados — escritório jurídico estruturado em quatro núcleos: Trabalhista, Cível, Família e Previdenciário. Atuação institucional para pessoas físicas e empresas, presencial em São Paulo e online em todo o Brasil.</p>
+        <p>Stank Sociedade de Advogados — escritório jurídico organizado em quatro núcleos: Trabalhista, Cível, Família e Previdenciário. Atuação institucional para pessoas e empresas, em São Paulo e em todo o Brasil.</p>
       </div>
       <div class="footer-col">
         <h4>Atuação</h4>
@@ -1327,7 +1318,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-off
       </div>
     </div>
 
-    <p class="footer-disclaimer">Este site tem caráter exclusivamente informativo, em conformidade com o Provimento nº 205/2021 do Conselho Federal da OAB e com o Código de Ética e Disciplina. As informações apresentadas não constituem consulta jurídica nem estabelecem, por si só, relação advogado-cliente. Toda análise depende da avaliação do caso concreto pelo escritório, mediante reunião reservada e formalização de contrato de honorários.</p>
+    <p class="footer-disclaimer">Este site tem caráter exclusivamente informativo, em conformidade com o Provimento nº 205/2021 do Conselho Federal da OAB e com o Código de Ética e Disciplina da advocacia. As informações aqui apresentadas não constituem consulta jurídica e não estabelecem, por si só, relação advogado-cliente. Cada análise depende da avaliação do caso concreto pelo escritório, mediante reunião reservada e formalização de contrato de honorários.</p>
 
     <div class="footer-bottom">
       <div>© <span id="year">2026</span> · Stank Sociedade de Advogados · Todos os direitos reservados</div>
@@ -1467,7 +1458,7 @@ document.querySelectorAll('[data-track]').forEach(el=>{
   if(!dot||!lab)return;
   const n=new Date(),d=n.getDay(),h=n.getHours();
   const open=d>=1&&d<=5&&h>=9&&h<18;
-  if(!open){dot.style.background='var(--bronze)';dot.style.boxShadow='none';dot.style.animation='none';lab.textContent='Escritório online · Resposta em horário comercial'}
+  if(!open){dot.style.background='var(--bronze)';dot.style.boxShadow='none';dot.style.animation='none';lab.textContent='Resposta no próximo dia útil'}
 })();
 </script>
 
