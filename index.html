@@ -262,8 +262,8 @@ section {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1.05fr;
-  gap: 70px;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 50px;
   align-items: center;
   position: relative;
   z-index: 2;
@@ -316,8 +316,9 @@ section {
 
 .hero-image {
   width: 100%;
-  aspect-ratio: 3/2.05;
+  aspect-ratio: 3/2;
   object-fit: cover;
+  object-position: center center;
   border-radius: 2px;
   box-shadow:
     0 30px 70px rgba(0, 0, 0, 0.5),
@@ -411,8 +412,8 @@ section {
 }
 .atendimento-grid {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 80px;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 56px;
   align-items: center;
 }
 .atendimento-image-wrap {
@@ -420,8 +421,9 @@ section {
 }
 .atendimento-image {
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 4/5;
   object-fit: cover;
+  object-position: center center;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
   border-radius: 2px;
 }
@@ -466,16 +468,17 @@ section {
 }
 .sobre-grid {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 80px;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 56px;
   align-items: center;
 }
 .sobre-content { order: 1; }
 .sobre-image-wrap { order: 2; position: relative; }
 .sobre-image {
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 3/4;
   object-fit: cover;
+  object-position: center 25%;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
   border-radius: 2px;
 }
@@ -513,14 +516,15 @@ section {
   margin-bottom: 60px;
 }
 .areas-image-wrap {
-  max-width: 980px;
+  max-width: 920px;
   margin: 0 auto 70px;
   position: relative;
 }
 .areas-image {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 3/2;
   object-fit: cover;
+  object-position: center 30%;
   border-radius: 2px;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
 }
@@ -663,8 +667,8 @@ section {
 }
 .consultoria-grid {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 80px;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 56px;
   align-items: center;
 }
 .consultoria-image-wrap {
@@ -674,6 +678,7 @@ section {
   width: 100%;
   aspect-ratio: 3/2;
   object-fit: cover;
+  object-position: center center;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
   border-radius: 2px;
 }
