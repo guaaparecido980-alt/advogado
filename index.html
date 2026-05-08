@@ -45,15 +45,17 @@
 <!-- <meta name="google-site-verification" content="COLAR_CODIGO"> -->
 <!-- <meta name="facebook-domain-verification" content="COLAR_CODIGO"> -->
 
-<link rel="shortcut icon" type="image/webp" href="favicon.webp">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/webp" href="favicon.webp">
-<link rel="apple-touch-icon" href="favicon.webp">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="preload" as="image" href="hero-claudete.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="foto-hero.webp" type="image/webp" fetchpriority="high">
 <link rel="preload" as="image" href="logo-nav.webp" type="image/webp" fetchpriority="high">
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -661,7 +663,7 @@ section{position:relative}
 .atend-photo{
   position:relative;
   border-radius:var(--r-xl);overflow:hidden;
-  aspect-ratio:3/4;
+  aspect-ratio:1/1;
   box-shadow:var(--shadow-glow);
 }
 .atend-photo::after{
@@ -711,7 +713,7 @@ section{position:relative}
 
 @media(max-width:900px){
   .atend-grid{grid-template-columns:1fr;gap:40px}
-  .atend-photo{max-width:480px;margin:0 auto;aspect-ratio:4/5}
+  .atend-photo{max-width:480px;margin:0 auto;aspect-ratio:1/1}
   .atend-pillars{grid-template-columns:1fr}
 }
 
@@ -727,9 +729,21 @@ section{position:relative}
   pointer-events:none;
 }
 .areas-header{
-  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
   margin-bottom:56px;
 }
+.areas-photo{
+  position:relative;
+  border-radius:var(--r-xl);overflow:hidden;
+  aspect-ratio:4/3;
+  box-shadow:var(--shadow-glow);
+}
+.areas-photo::after{
+  content:'';position:absolute;inset:0;
+  border:1px solid rgba(200,162,94,.2);
+  border-radius:var(--r-xl);pointer-events:none;
+}
+.areas-photo img{width:100%;height:100%;object-fit:cover}
 
 .areas-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 
@@ -812,7 +826,8 @@ section{position:relative}
 .area-card-cta:hover{gap:16px}
 
 @media(max-width:900px){
-  .areas-header{grid-template-columns:1fr;gap:24px;margin-bottom:40px}
+  .areas-header{grid-template-columns:1fr;gap:32px;margin-bottom:40px}
+  .areas-photo{max-width:520px;margin:0 auto;aspect-ratio:16/10;order:-1}
   .areas-grid{grid-template-columns:1fr;gap:14px}
   .area-card{padding:32px 24px}
   .area-card-list{grid-template-columns:1fr}
@@ -883,6 +898,66 @@ section{position:relative}
   .step p{max-width:none}
 }
 
+/* ===================== CONSULTORIA (PG6) ===================== */
+.consultoria{
+  background:var(--petroleo);
+  position:relative;overflow:hidden;
+}
+.consultoria::before{
+  content:'';position:absolute;top:30%;left:-150px;
+  width:450px;height:450px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,162,94,.04) 0%,transparent 60%);
+  pointer-events:none;
+}
+.cons-grid{
+  display:grid;grid-template-columns:1.05fr 1fr;gap:80px;align-items:center;
+}
+.cons-photo{
+  position:relative;
+  border-radius:var(--r-xl);overflow:hidden;
+  aspect-ratio:4/3;
+  box-shadow:var(--shadow-glow);
+}
+.cons-photo::after{
+  content:'';position:absolute;inset:0;
+  border:1px solid rgba(200,162,94,.22);
+  border-radius:var(--r-xl);pointer-events:none;
+}
+.cons-photo img{width:100%;height:100%;object-fit:cover}
+
+.cons-content p{
+  font-size:16px;line-height:1.78;
+  color:var(--text-soft);margin-bottom:20px;
+}
+.cons-note{
+  display:flex;align-items:flex-start;gap:14px;
+  margin-top:28px;padding:20px 22px;
+  background:linear-gradient(180deg,rgba(200,162,94,.06) 0%,rgba(200,162,94,.01) 100%);
+  border:1px solid rgba(200,162,94,.18);
+  border-left:3px solid var(--gold);
+  border-radius:var(--r-md);
+}
+.cons-note-mark{
+  width:28px;height:28px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(200,162,94,.25),rgba(200,162,94,.05));
+  border:1px solid rgba(200,162,94,.4);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-style:italic;font-size:13px;
+  color:var(--gold);
+  flex-shrink:0;
+}
+.cons-note p{
+  font-size:13.5px;line-height:1.6;
+  color:var(--text-soft);
+  margin:0;
+}
+.cons-note p strong{color:var(--gold-soft);font-weight:600}
+
+@media(max-width:900px){
+  .cons-grid{grid-template-columns:1fr;gap:40px}
+  .cons-photo{max-width:520px;margin:0 auto;aspect-ratio:16/10;order:-1}
+}
+
 /* ===================== SOBRE ===================== */
 .sobre{
   background:var(--petroleo);
@@ -900,8 +975,9 @@ section{position:relative}
 .sobre-photo{
   position:relative;
   border-radius:var(--r-xl);overflow:hidden;
-  aspect-ratio:3/4;
+  aspect-ratio:2/3;
   box-shadow:var(--shadow-glow);
+  max-width:480px;
 }
 .sobre-photo::after{
   content:'';position:absolute;inset:0;
@@ -950,7 +1026,7 @@ section{position:relative}
 
 @media(max-width:900px){
   .sobre-grid{grid-template-columns:1fr;gap:40px}
-  .sobre-photo{max-width:480px;margin:0 auto;aspect-ratio:4/5}
+  .sobre-photo{max-width:380px;margin:0 auto;aspect-ratio:2/3}
   .sobre-credentials{grid-template-columns:1fr 1fr;gap:16px}
 }
 @media(max-width:600px){
@@ -1289,7 +1365,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <nav aria-label="Navegação principal">
     <ul class="nav-menu">
       <li><a href="#atendimento">Atendimento</a></li>
-      <li><a href="#areas">Áreas de Atuação</a></li>
+      <li><a href="#areas">Áreas</a></li>
       <li><a href="#processo">Como Funciona</a></li>
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#faq">Dúvidas</a></li>
@@ -1365,7 +1441,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   </div>
 
   <div class="hero-photo">
-    <img src="hero-claudete.webp" alt="Dra. Claudete L. Souza, advogada — CLS Advocacia em Curitiba" loading="eager" fetchpriority="high" width="1536" height="1024">
+    <img src="foto-hero.webp" alt="Dra. Claudete L. Souza, advogada — CLS Advocacia em Curitiba" loading="eager" fetchpriority="high" width="1536" height="1024">
     <div class="hero-photo-badge">
       <div class="hero-photo-badge-mark">C</div>
       <div class="hero-photo-badge-text">
@@ -1383,7 +1459,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="container">
     <div class="atend-grid">
       <div class="atend-photo reveal">
-        <img src="atendimento-claudete.webp" alt="Atendimento jurídico individualizado — Dra. Claudete L. Souza com cliente" loading="lazy" width="1536" height="1024">
+        <img src="foto-atendimento.webp" alt="Dra. Claudete L. Souza — atendimento jurídico individualizado" loading="lazy" width="1254" height="1254">
       </div>
       <div class="atend-content reveal">
         <div class="section-label">Atendimento</div>
@@ -1427,8 +1503,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <div class="reveal">
         <div class="section-label">Áreas de Atuação</div>
         <h2 class="section-title">Atuação <span class="ital">focada</span> e estratégica.</h2>
+        <p class="section-intro" style="margin-top:24px">Concentração em duas áreas complementares — Família e Sucessões — com profundidade técnica e atenção individual a cada caso. Sem dispersão, com foco em quem busca segurança jurídica em decisões patrimoniais e familiares.</p>
       </div>
-      <p class="section-intro reveal">Concentração em duas áreas complementares — Família e Sucessões — com profundidade técnica e atenção individual a cada caso. Sem dispersão, com foco em quem busca segurança jurídica em decisões patrimoniais e familiares.</p>
+      <div class="areas-photo reveal">
+        <img src="foto-areas.webp" alt="Dra. Claudete L. Souza, advogada CLS Advocacia" loading="lazy" width="1536" height="1024">
+      </div>
     </div>
 
     <div class="areas-grid">
@@ -1507,13 +1586,40 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 </section>
 
 <!-- ============================================================
+                  CONSULTORIA (PG6 — Foto bordô)
+============================================================ -->
+<section class="consultoria section-pad" id="consultoria">
+  <div class="container">
+    <div class="cons-grid">
+      <div class="cons-content reveal">
+        <div class="section-label">Consultoria Jurídica Personalizada</div>
+        <h2 class="section-title">Análise <span class="ital">individualizada</span> com direcionamento técnico.</h2>
+        <p>A análise do seu caso é realizada por meio de atendimento jurídico individualizado. Durante a consultoria, são avaliados os aspectos técnicos da situação, os direitos envolvidos e os caminhos jurídicos mais adequados.</p>
+        <p>O objetivo é proporcionar clareza, estratégia e segurança antes de qualquer tomada de decisão.</p>
+        <div class="cons-note">
+          <span class="cons-note-mark">i</span>
+          <p><strong>Observação:</strong> O valor da consultoria poderá ser abatido em caso de contratação para atuação no processo.</p>
+        </div>
+        <a href="https://wa.me/5541998560467?text=Ol%C3%A1%2C%20Dra.%20Claudete.%20Gostaria%20de%20agendar%20uma%20consultoria%20jur%C3%ADdica%20individualizada." target="_blank" rel="noopener" class="btn-primary" data-track="wa_consultoria" style="margin-top:32px">
+          <span>Agendar consultoria</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="cons-photo reveal">
+        <img src="foto-consultoria.webp" alt="Consultoria jurídica — Dra. Claudete L. Souza atendendo cliente" loading="lazy" width="1536" height="1024">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
                           SOBRE
 ============================================================ -->
 <section class="sobre section-pad" id="sobre">
   <div class="container">
     <div class="sobre-grid">
       <div class="sobre-photo reveal">
-        <img src="sobre-claudete.webp" alt="Dra. Claudete L. Souza — Advogada CLS Advocacia, Curitiba" loading="lazy" width="1536" height="1024">
+        <img src="foto-sobre.webp" alt="Dra. Claudete L. Souza — Advogada CLS Advocacia, Curitiba" loading="lazy" width="1023" height="1537">
       </div>
 
       <div class="sobre-text reveal">
