@@ -174,9 +174,34 @@ section {
   margin: 0 auto;
   padding: 0 28px;
 }
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 .nav-logo img {
   height: 56px;
   width: auto;
+}
+.nav-logo-text-mobile {
+  display: none;
+  flex-direction: column;
+  line-height: 1;
+}
+.nav-logo-text-mobile strong {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--text-cream);
+  letter-spacing: 0.04em;
+}
+.nav-logo-text-mobile small {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--gold);
+  margin-top: 4px;
+  text-transform: uppercase;
 }
 .nav-links {
   display: flex;
@@ -423,7 +448,7 @@ section {
   width: 100%;
   aspect-ratio: 4/5;
   object-fit: cover;
-  object-position: center center;
+  object-position: 30% center;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
   border-radius: 2px;
 }
@@ -867,14 +892,30 @@ section {
   bottom: 24px;
   left: 24px;
   right: 24px;
-  max-width: 480px;
+  max-width: 420px;
   margin-left: auto;
   background: var(--bg-charcoal-brown);
   border: 1px solid var(--line-subtle);
-  padding: 22px 24px;
+  padding: 20px 22px;
   z-index: 998;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
   display: none;
+}
+@media (max-width: 580px) {
+  .cookie-banner {
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    padding: 16px 18px;
+  }
+  .cookie-banner p {
+    font-size: 0.78rem;
+    margin-bottom: 12px;
+  }
+  .cookie-btn {
+    padding: 8px 16px;
+    font-size: 10px;
+  }
 }
 .cookie-banner.active { display: block; animation: fadeUp 0.5s; }
 .cookie-banner p {
@@ -960,6 +1001,7 @@ section {
   }
 
   .nav-logo img { height: 46px; }
+  .nav-logo-text-mobile { display: flex; }
 
   .hero-grid {
     grid-template-columns: 1fr;
@@ -974,16 +1016,16 @@ section {
   .sobre-grid,
   .consultoria-grid {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 50px;
   }
   .sobre-image-wrap { order: 1; }
   .sobre-content { order: 2; }
-  .atendimento-image,
-  .consultoria-image {
-    max-width: 460px;
+  .atendimento-image-wrap,
+  .consultoria-image-wrap {
+    max-width: 440px;
     margin: 0 auto;
   }
-  .sobre-image { max-width: 380px; margin: 0 auto; }
+  .sobre-image-wrap { max-width: 360px; margin: 0 auto; }
   .atendimento-separator { margin-left: auto; margin-right: auto; }
 
   .areas-list {
@@ -1029,6 +1071,10 @@ section {
   <div class="nav-content">
     <a href="#hero" class="nav-logo" aria-label="CLS Advocacia">
       <img src="logo-nav.webp" alt="CLS Advocacia" width="180" height="56">
+      <span class="nav-logo-text-mobile">
+        <strong>CLS</strong>
+        <small>Advocacia</small>
+      </span>
     </a>
     <ul class="nav-links">
       <li><a href="#atendimento">Atendimento</a></li>
