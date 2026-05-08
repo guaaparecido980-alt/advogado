@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Cookies | CLS Advocacia</title>
+<meta name="description" content="Política de Cookies da CLS Advocacia — entenda quais cookies utilizamos, suas finalidades, prazos de retenção e como gerenciá-los. Em conformidade com a LGPD.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://clsadvocacia.com/cookies.html">
+
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-coffee-deep: #1A1411;
+  --bg-coffee-soft: #221A15;
+  --bg-charcoal-brown: #2A2018;
+  --bg-warm-shadow: #16100D;
+  --gold: #C9A876;
+  --gold-soft: #B89968;
+  --gold-light: #E0C896;
+  --text-cream: #E8DFD3;
+  --text-warm: #C4B8A7;
+  --text-muted: #8C8275;
+  --line-subtle: rgba(201, 168, 118, 0.18);
+  --line-strong: rgba(201, 168, 118, 0.4);
+}
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  background: var(--bg-coffee-deep);
+  color: var(--text-cream);
+  line-height: 1.75;
+  font-weight: 300;
+  font-size: 15.5px;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ============ NAVBAR SIMPLES ============ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 0;
+  background: rgba(22, 16, 13, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line-subtle);
+}
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.nav-logo img {
+  height: 60px;
+  width: auto;
+}
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.nav-logo-text strong {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--text-cream);
+  letter-spacing: 0.05em;
+}
+.nav-logo-text small {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 10px 18px;
+  border: 1px solid var(--gold);
+  transition: all 0.3s;
+}
+.back-link:hover {
+  background: var(--gold);
+  color: var(--bg-coffee-deep);
+}
+.back-link svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* ============ CONTEÚDO ============ */
+.wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 70px 28px 90px;
+}
+
+/* Separador losango (assinatura da marca) */
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  margin: 28px 0 36px;
+  max-width: 280px;
+}
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--gold-soft);
+}
+.separator-diamond {
+  width: 9px;
+  height: 9px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* Header da página */
+.header {
+  border-bottom: 1px solid var(--line-subtle);
+  padding-bottom: 36px;
+  margin-bottom: 48px;
+}
+.header-meta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.header-meta::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4.6vw, 54px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+  color: var(--text-cream);
+}
+h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.header-date {
+  font-size: 13px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* Intro */
+.intro {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(17px, 2vw, 21px);
+  line-height: 1.6;
+  color: var(--text-warm);
+  margin-bottom: 50px;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+}
+
+/* Seções */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 2.8vw, 30px);
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 56px 0 18px;
+  color: var(--text-cream);
+  letter-spacing: -0.005em;
+}
+h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  font-weight: 500;
+  margin: 32px 0 12px;
+  color: var(--gold-light);
+}
+
+p {
+  margin-bottom: 16px;
+  color: var(--text-warm);
+}
+
+p strong {
+  color: var(--text-cream);
+  font-weight: 600;
+}
+
+a.inline {
+  color: var(--gold);
+  border-bottom: 1px solid var(--gold-soft);
+  transition: color 0.3s;
+}
+a.inline:hover {
+  color: var(--gold-light);
+}
+
+ul {
+  list-style: none;
+  margin: 16px 0 22px;
+}
+ul li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+  color: var(--text-warm);
+}
+ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+
+/* Tabela de cookies */
+.cookie-table-wrap {
+  margin: 24px 0 32px;
+  overflow-x: auto;
+  border: 1px solid var(--line-subtle);
+}
+.cookie-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  min-width: 640px;
+}
+.cookie-table thead {
+  background: var(--bg-charcoal-brown);
+}
+.cookie-table th {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 16px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--line-strong);
+}
+.cookie-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--line-subtle);
+  color: var(--text-warm);
+  vertical-align: top;
+  line-height: 1.6;
+}
+.cookie-table tr:last-child td {
+  border-bottom: none;
+}
+.cookie-table .cookie-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: var(--text-cream);
+  font-size: 13px;
+}
+.cookie-table .cookie-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid var(--gold-soft);
+  color: var(--gold);
+  white-space: nowrap;
+}
+.cookie-tag.essencial {
+  background: rgba(201, 168, 118, 0.12);
+  border-color: var(--gold);
+}
+
+/* Bloco em destaque */
+.highlight-box {
+  margin: 32px 0;
+  padding: 24px 28px;
+  border-left: 2px solid var(--gold);
+  background: rgba(201, 168, 118, 0.04);
+}
+.highlight-box .label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+  display: block;
+}
+.highlight-box p {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--text-cream);
+  line-height: 1.7;
+}
+
+/* Step list (passo a passo) */
+.steps {
+  counter-reset: step;
+  list-style: none;
+  margin: 16px 0 22px;
+}
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 44px;
+  margin-bottom: 14px;
+  color: var(--text-warm);
+}
+.steps li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+/* Footer */
+footer {
+  margin-top: 80px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line-subtle);
+  text-align: center;
+}
+footer p {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+footer p strong {
+  color: var(--text-warm);
+}
+.footer-credit a {
+  color: var(--gold);
+  font-weight: 600;
+}
+.footer-credit a:hover { color: var(--gold-light); }
+
+/* Responsivo */
+@media (max-width: 720px) {
+  .wrap { padding: 50px 22px 70px; }
+  .nav-content { padding: 0 20px; }
+  .nav-logo img { height: 48px; }
+  .nav-logo-text strong { font-size: 17px; }
+  .nav-logo-text small { font-size: 8.5px; letter-spacing: 0.26em; }
+  .back-link { padding: 8px 14px; font-size: 10px; }
+  .back-link svg { width: 12px; height: 12px; }
+  .back-text-full { display: none; }
+  body { font-size: 14.5px; }
+  h1 { font-size: 32px; }
+  h2 { font-size: 22px; margin-top: 44px; }
+  h3 { font-size: 17px; }
+  .intro { font-size: 16.5px; }
+  .cookie-table { font-size: 12.5px; }
+  .cookie-table th, .cookie-table td { padding: 12px 14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar">
+  <div class="nav-content">
+    <a href="index.html" class="nav-logo" aria-label="CLS Advocacia">
+      <img src="logo-nav.webp" alt="CLS Advocacia">
+      <span class="nav-logo-text">
+        <strong>CLS</strong>
+        <small>Advocacia</small>
+      </span>
+    </a>
+    <a href="index.html" class="back-link">
+      <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <span class="back-text-full">Voltar ao site</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ============ CONTEÚDO ============ -->
+<main class="wrap">
+
+  <header class="header">
+    <span class="header-meta">Política de Cookies</span>
+    <h1>Como utilizamos <em>cookies</em> em nosso site</h1>
+    <div class="separator" aria-hidden="true">
+      <span class="separator-diamond"></span>
+    </div>
+    <p class="header-date">Última atualização: 8 de maio de 2026</p>
+  </header>
+
+  <p class="intro">
+    Este documento esclarece, de forma clara e objetiva, quais cookies são utilizados pelo site da CLS Advocacia, com quais finalidades, por quanto tempo permanecem armazenados e como você pode gerenciá-los a qualquer momento.
+  </p>
+
+  <!-- 1 -->
+  <h2>1. O que são <em>cookies</em></h2>
+  <p>
+    Cookies são pequenos arquivos de texto que ficam armazenados no seu navegador quando você visita um site. Eles servem para reconhecer seu dispositivo em visitas futuras, lembrar suas preferências, garantir o funcionamento adequado das páginas e, em alguns casos, coletar dados estatísticos sobre a navegação.
+  </p>
+  <p>
+    Os cookies não acessam arquivos pessoais do seu computador ou celular, não instalam programas e não causam danos ao dispositivo.
+  </p>
+
+  <!-- 2 -->
+  <h2>2. Por que utilizamos <em>cookies</em></h2>
+  <p>
+    Utilizamos cookies para garantir o funcionamento técnico do site, lembrar suas escolhas de privacidade, mensurar o desempenho das páginas e melhorar continuamente sua experiência de navegação. Nenhum cookie utilizado tem como finalidade identificar você de forma direta ou comprometer dados sensíveis.
+  </p>
+
+  <!-- 3 -->
+  <h2>3. Tipos de <em>cookies</em> utilizados</h2>
+
+  <h3>3.1. Cookies essenciais</h3>
+  <p>
+    São indispensáveis para o funcionamento básico do site. Sem eles, recursos como navegação entre páginas, lembrança da sua preferência sobre o banner de cookies e estabilidade do site ficam comprometidos. Esses cookies <strong>não exigem consentimento prévio</strong>, conforme previsto no artigo 7º, inciso IX, da LGPD.
+  </p>
+
+  <h3>3.2. Cookies de desempenho e análise</h3>
+  <p>
+    Coletam informações estatísticas e anônimas sobre como os visitantes utilizam o site — quais páginas são mais acessadas, tempo de permanência, origem do tráfego e dispositivos utilizados. Esses dados nos ajudam a identificar pontos de melhoria e oferecer um conteúdo mais relevante. <strong>Dependem do seu consentimento</strong> e podem ser recusados sem prejuízo à navegação.
+  </p>
+
+  <h3>3.3. Cookies de funcionalidade</h3>
+  <p>
+    Permitem que o site lembre de escolhas que você fez (como preferências visuais ou idioma do navegador) para personalizar sua experiência em visitas futuras. Também podem ser desativados a qualquer momento.
+  </p>
+
+  <!-- 4 -->
+  <h2>4. Detalhamento dos <em>cookies</em></h2>
+  <p>
+    A tabela abaixo apresenta os cookies atualmente utilizados pelo site da CLS Advocacia, com suas finalidades, fornecedores e prazos de retenção:
+  </p>
+
+  <div class="cookie-table-wrap">
+    <table class="cookie-table">
+      <thead>
+        <tr>
+          <th>Cookie</th>
+          <th>Categoria</th>
+          <th>Finalidade</th>
+          <th>Prazo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="cookie-name">cls_cookies</span></td>
+          <td><span class="cookie-tag essencial">Essencial</span></td>
+          <td>Armazena sua escolha sobre o banner de cookies (aceitar ou recusar) para evitar que ele seja exibido novamente na mesma sessão.</td>
+          <td>Sessão</td>
+        </tr>
+        <tr>
+          <td><span class="cookie-name">_ga</span></td>
+          <td><span class="cookie-tag">Análise</span></td>
+          <td>Cookie do Google Analytics. Utilizado para distinguir usuários únicos e gerar dados estatísticos anônimos sobre o uso do site.</td>
+          <td>2 anos</td>
+        </tr>
+        <tr>
+          <td><span class="cookie-name">_ga_*</span></td>
+          <td><span class="cookie-tag">Análise</span></td>
+          <td>Cookie do Google Analytics 4. Persiste o estado da sessão do visitante para mensuração de desempenho.</td>
+          <td>2 anos</td>
+        </tr>
+        <tr>
+          <td><span class="cookie-name">_gid</span></td>
+          <td><span class="cookie-tag">Análise</span></td>
+          <td>Cookie do Google Analytics. Identifica usuários únicos durante 24 horas para fins estatísticos.</td>
+          <td>24 horas</td>
+        </tr>
+        <tr>
+          <td><span class="cookie-name">NID</span></td>
+          <td><span class="cookie-tag">Funcional</span></td>
+          <td>Cookie utilizado pelo Google para preferências do usuário e personalização de serviços (quando incorporados ao site).</td>
+          <td>6 meses</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 32px;">
+    Eventuais cookies de terceiros poderão ser inseridos por integrações futuras (como mapas, formulários ou conteúdos incorporados). Esta política será atualizada sempre que houver alteração relevante.
+  </p>
+
+  <!-- 5 -->
+  <h2>5. Como <em>gerenciar</em> seus cookies</h2>
+  <p>
+    Você tem total liberdade para aceitar, recusar ou apagar cookies a qualquer momento. As principais formas de gerenciamento são:
+  </p>
+
+  <h3>5.1. Pelo banner de consentimento do nosso site</h3>
+  <p>
+    Ao acessar o site pela primeira vez, você visualiza um banner perguntando sobre o uso de cookies. Você pode escolher entre <strong>aceitar</strong> ou <strong>recusar</strong>. Sua escolha é registrada para que o banner não seja exibido novamente na mesma sessão.
+  </p>
+
+  <h3>5.2. Pelas configurações do seu navegador</h3>
+  <p>
+    Você pode bloquear ou apagar cookies diretamente nas configurações do navegador que utiliza. Veja o passo a passo nos navegadores mais comuns:
+  </p>
+
+  <ol class="steps">
+    <li><strong>Google Chrome:</strong> Configurações → Privacidade e segurança → Cookies e outros dados do site.</li>
+    <li><strong>Mozilla Firefox:</strong> Opções → Privacidade e segurança → Cookies e dados do site.</li>
+    <li><strong>Safari:</strong> Preferências → Privacidade → Gerenciar dados do site.</li>
+    <li><strong>Microsoft Edge:</strong> Configurações → Cookies e permissões do site → Gerenciar e excluir cookies.</li>
+  </ol>
+
+  <div class="highlight-box">
+    <span class="label">Importante</span>
+    <p>
+      O bloqueio total de cookies pode comprometer o funcionamento adequado de algumas partes do site, incluindo a memorização de suas preferências. Recomendamos manter, ao menos, os cookies essenciais ativos.
+    </p>
+  </div>
+
+  <!-- 6 -->
+  <h2>6. <em>Cookies</em> de terceiros</h2>
+  <p>
+    Algumas funcionalidades do site dependem de serviços fornecidos por terceiros, que podem inserir seus próprios cookies. Os principais terceiros utilizados atualmente são:
+  </p>
+  <ul>
+    <li><strong>Google Analytics</strong> — para mensuração estatística e análise de desempenho. <a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidade do Google</a>.</li>
+    <li><strong>Google Fonts</strong> — para carregamento de fontes utilizadas no site (sem coleta de dados pessoais).</li>
+  </ul>
+  <p>
+    A CLS Advocacia não tem controle sobre os cookies inseridos por terceiros e recomenda a leitura das políticas específicas de cada serviço.
+  </p>
+
+  <!-- 7 -->
+  <h2>7. Seus <em>direitos</em> como titular</h2>
+  <p>
+    Em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018), você tem o direito de:
+  </p>
+  <ul>
+    <li>Confirmar a existência de tratamento de dados realizado por meio de cookies.</li>
+    <li>Solicitar acesso, correção ou eliminação dos dados coletados.</li>
+    <li>Revogar o consentimento a qualquer momento.</li>
+    <li>Solicitar a anonimização ou portabilidade dos dados.</li>
+    <li>Apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD).</li>
+  </ul>
+
+  <!-- 8 -->
+  <h2>8. <em>Atualizações</em> desta política</h2>
+  <p>
+    Esta Política de Cookies pode ser atualizada periodicamente, sempre que houver alteração nos cookies utilizados, nos serviços de terceiros ou na legislação aplicável. A data da última revisão é indicada no início deste documento. Recomendamos consulta periódica para ciência das eventuais mudanças.
+  </p>
+
+  <!-- 9 -->
+  <h2>9. <em>Contato</em></h2>
+  <p>
+    Em caso de dúvidas sobre esta Política de Cookies ou sobre o tratamento dos seus dados pessoais, entre em contato com a CLS Advocacia:
+  </p>
+  <ul>
+    <li><strong>WhatsApp:</strong> <a class="inline" href="https://wa.me/5541987095245" target="_blank" rel="noopener">(41) 98709-5245</a></li>
+    <li><strong>Site:</strong> <a class="inline" href="https://clsadvocacia.com">clsadvocacia.com</a></li>
+    <li><strong>Documento relacionado:</strong> <a class="inline" href="privacidade.html">Política de Privacidade</a></li>
+  </ul>
+
+  <!-- Footer -->
+  <footer>
+    <p><strong>CLS Advocacia</strong></p>
+    <p>© <span id="year"></span> · Todos os direitos reservados</p>
+    <p class="footer-credit" style="margin-top: 14px;">
+      Criado por <a href="https://gustavodigital.online" target="_blank" rel="noopener">Gustavo Digital</a>
+    </p>
+  </footer>
+
+</main>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
