@@ -712,8 +712,8 @@ section{position:relative}
 }
 
 @media(max-width:900px){
-  .atend-grid{grid-template-columns:1fr;gap:40px}
-  .atend-photo{max-width:480px;margin:0 auto;aspect-ratio:1/1}
+  .atend-grid{grid-template-columns:1fr;gap:32px}
+  .atend-photo{display:none}
   .atend-pillars{grid-template-columns:1fr}
 }
 
@@ -826,8 +826,8 @@ section{position:relative}
 .area-card-cta:hover{gap:16px}
 
 @media(max-width:900px){
-  .areas-header{grid-template-columns:1fr;gap:32px;margin-bottom:40px}
-  .areas-photo{max-width:520px;margin:0 auto;aspect-ratio:16/10;order:-1}
+  .areas-header{grid-template-columns:1fr;gap:24px;margin-bottom:36px}
+  .areas-photo{display:none}
   .areas-grid{grid-template-columns:1fr;gap:14px}
   .area-card{padding:32px 24px}
   .area-card-list{grid-template-columns:1fr}
@@ -954,8 +954,8 @@ section{position:relative}
 .cons-note p strong{color:var(--gold-soft);font-weight:600}
 
 @media(max-width:900px){
-  .cons-grid{grid-template-columns:1fr;gap:40px}
-  .cons-photo{max-width:520px;margin:0 auto;aspect-ratio:16/10;order:-1}
+  .cons-grid{grid-template-columns:1fr;gap:32px}
+  .cons-photo{max-width:520px;margin:0 auto;aspect-ratio:16/10}
 }
 
 /* ===================== SOBRE ===================== */
@@ -1264,10 +1264,13 @@ section{position:relative}
   .footer-mark .big{justify-content:center}
   .footer-mark .big img{margin:0 auto}
   .footer-mark .meta{text-align:center;max-width:none}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
   .footer-bottom{flex-direction:column;align-items:flex-start;gap:12px}
 }
-@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+@media(max-width:600px){
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+  .footer-col h4{margin-bottom:14px}
+}
 
 /* ===================== WHATSAPP FLOAT ===================== */
 .wa-float{
@@ -1458,7 +1461,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 <section class="atendimento section-pad" id="atendimento">
   <div class="container">
     <div class="atend-grid">
-      <div class="atend-photo reveal">
+      <div class="atend-photo">
         <img src="foto-atendimento.webp" alt="Dra. Claudete L. Souza — atendimento jurídico individualizado" loading="lazy" width="1254" height="1254">
       </div>
       <div class="atend-content reveal">
@@ -1505,7 +1508,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
         <h2 class="section-title">Atuação <span class="ital">focada</span> e estratégica.</h2>
         <p class="section-intro" style="margin-top:24px">Concentração em duas áreas complementares — Família e Sucessões — com profundidade técnica e atenção individual a cada caso. Sem dispersão, com foco em quem busca segurança jurídica em decisões patrimoniais e familiares.</p>
       </div>
-      <div class="areas-photo reveal">
+      <div class="areas-photo">
         <img src="foto-areas.webp" alt="Dra. Claudete L. Souza, advogada CLS Advocacia" loading="lazy" width="1536" height="1024">
       </div>
     </div>
@@ -1605,7 +1608,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
-      <div class="cons-photo reveal">
+      <div class="cons-photo">
         <img src="foto-consultoria.webp" alt="Consultoria jurídica — Dra. Claudete L. Souza atendendo cliente" loading="lazy" width="1536" height="1024">
       </div>
     </div>
@@ -1618,7 +1621,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 <section class="sobre section-pad" id="sobre">
   <div class="container">
     <div class="sobre-grid">
-      <div class="sobre-photo reveal">
+      <div class="sobre-photo">
         <img src="foto-sobre.webp" alt="Dra. Claudete L. Souza — Advogada CLS Advocacia, Curitiba" loading="lazy" width="1023" height="1537">
       </div>
 
@@ -1880,8 +1883,25 @@ if ('IntersectionObserver' in window) {
         ob.unobserve(e.target);
       }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+  }, { threshold: 0.05, rootMargin: '0px 0px -5% 0px' });
   reveals.forEach(el => ob.observe(el));
+
+  // Fallback: ativa qualquer reveal que esteja visível ou acima da viewport
+  // (caso o IntersectionObserver não dispare por order:-1, layout shift, etc)
+  function activateVisibleReveals() {
+    document.querySelectorAll('.reveal:not(.in)').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight + 100 && r.bottom > -100) {
+        el.classList.add('in');
+      }
+    });
+  }
+  window.addEventListener('load', () => setTimeout(activateVisibleReveals, 100));
+  let scrollDeb;
+  window.addEventListener('scroll', () => {
+    clearTimeout(scrollDeb);
+    scrollDeb = setTimeout(activateVisibleReveals, 80);
+  }, { passive: true });
 } else {
   reveals.forEach(el => el.classList.add('in'));
 }
