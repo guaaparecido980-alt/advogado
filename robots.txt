@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /privacidade.html
-
-Sitemap: https://clsadvocacia.com/sitemap.xml
