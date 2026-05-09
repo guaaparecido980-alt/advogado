@@ -985,30 +985,80 @@ section {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 80%;
-    max-width: 320px;
+    width: 100%;
+    max-width: 100%;
     height: 100vh;
+    height: 100dvh;
     background: var(--bg-coffee-deep);
-    border-left: 1px solid var(--line-subtle);
-    padding: 100px 32px 32px;
-    transition: right 0.4s ease;
+    padding: 110px 32px 40px;
+    transition: right 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
     display: flex;
     flex-direction: column;
-    gap: 26px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
     z-index: 999;
+    overflow-y: auto;
+  }
+  .nav-mobile::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 30%, rgba(201, 168, 118, 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 50% 80%, rgba(201, 168, 118, 0.04) 0%, transparent 60%);
+    pointer-events: none;
   }
   .nav-mobile.active { right: 0; }
   .nav-mobile a {
-    font-size: 14px;
+    position: relative;
+    z-index: 2;
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 400;
     color: var(--text-cream);
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--line-subtle);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    padding: 18px 0;
+    border-bottom: none;
+    transition: color 0.3s;
+    width: 100%;
+    text-align: center;
+    max-width: 320px;
   }
+  .nav-mobile a:hover,
+  .nav-mobile a:active { color: var(--gold); }
   .nav-mobile .nav-cta {
     display: inline-flex;
-    margin-top: 16px;
+    margin-top: 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    width: auto;
+    max-width: none;
+  }
+  .nav-mobile .nav-cta:hover {
+    background: var(--gold);
+    color: var(--bg-coffee-deep);
+  }
+  /* Logo decorativa no menu */
+  .nav-mobile-logo {
+    position: absolute;
+    top: 18px;
+    left: 28px;
+    z-index: 2;
+    height: 54px;
+    width: auto;
+  }
+  /* Garante que o toggle (X) fica acima do menu */
+  .nav-toggle {
+    position: relative;
+    z-index: 1001;
   }
 
   .nav-logo img { height: 54px; }
@@ -1102,6 +1152,7 @@ section {
 
 <!-- Menu mobile -->
 <div class="nav-mobile" id="navMobile">
+  <img src="logo-nav.webp" alt="" class="nav-mobile-logo" aria-hidden="true">
   <a href="#atendimento" class="mobile-link">Atendimento</a>
   <a href="#sobre" class="mobile-link">Sobre</a>
   <a href="#areas" class="mobile-link">Áreas de Atuação</a>
@@ -1462,11 +1513,13 @@ const navMobile = document.getElementById('navMobile');
 navToggle.addEventListener('click', () => {
   navToggle.classList.toggle('active');
   navMobile.classList.toggle('active');
+  document.body.style.overflow = navMobile.classList.contains('active') ? 'hidden' : '';
 });
 document.querySelectorAll('.mobile-link').forEach(link => {
   link.addEventListener('click', () => {
     navToggle.classList.remove('active');
     navMobile.classList.remove('active');
+    document.body.style.overflow = '';
   });
 });
 
