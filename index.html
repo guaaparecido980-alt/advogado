@@ -685,15 +685,15 @@ section {
   margin-bottom: 60px;
 }
 .areas-image-wrap {
-  max-width: 920px;
+  max-width: 720px;
   margin: 0 auto 70px;
   position: relative;
 }
 .areas-image {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 4/3;
   object-fit: cover;
-  object-position: center 35%;
+  object-position: center 20%;
   border-radius: 2px;
   box-shadow: var(--shadow-float);
   filter: saturate(0.92) contrast(1.04);
@@ -1306,6 +1306,11 @@ section {
   .consultoria-image-wrap::before {
     display: none;
   }
+  /* Areas: imagem maior em mobile, sem cortar */
+  .areas-image {
+    aspect-ratio: 3/4;
+    object-position: center 15%;
+  }
 }
 
 </style>
@@ -1462,7 +1467,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="areas-image-wrap reveal">
-      <img src="foto-areas.webp" alt="Advogada da CLS Advocacia ao lado de livros de Direito de Família, Sucessões e Prática Forense" class="areas-image" width="1200" height="675" loading="lazy">
+      <img src="foto-areas.webp" alt="Advogada da CLS Advocacia ao lado de livros de Direito de Família, Sucessões e Prática Forense" class="areas-image" width="1200" height="900" loading="lazy">
     </div>
 
     <div class="areas-list reveal">
