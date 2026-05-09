@@ -685,15 +685,14 @@ section {
   margin-bottom: 60px;
 }
 .areas-image-wrap {
-  max-width: 520px;
+  max-width: 720px;
   margin: 0 auto 70px;
   position: relative;
 }
 .areas-image {
   width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  object-position: center center;
+  height: auto;
+  display: block;
   border-radius: 2px;
   box-shadow: var(--shadow-float);
   filter: saturate(0.92) contrast(1.04);
@@ -1306,10 +1305,10 @@ section {
   .consultoria-image-wrap::before {
     display: none;
   }
-  /* Areas: imagem ainda mais alta em mobile, sem cortar */
+  /* Areas: imagem inteira sem cortar nada */
   .areas-image {
-    aspect-ratio: 3/4;
-    object-position: center center;
+    width: 100%;
+    height: auto;
   }
 }
 
